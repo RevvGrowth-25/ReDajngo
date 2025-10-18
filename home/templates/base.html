@@ -1,242 +1,210 @@
-<!-- base.html -->
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Revv Growth AI Department{% endblock %}</title>
+    <title>{% block title %}AI Dept – CEO Dashboard{% endblock %}</title>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Font Awesome -->
+    <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Configure Tailwind -->
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
+            theme:{
+                extend:{
+                    colors:{
+                        brand:{
+                            50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',300:'#7dd3fc',
+                            400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',
+                            800:'#075985',900:'#0c4a6e'
                         },
-                        secondary: {
-                            50: '#faf5ff',
-                            100: '#f3e8ff',
-                            200: '#e9d5ff',
-                            300: '#d8b4fe',
-                            400: '#c084fc',
-                            500: '#a855f7',
-                            600: '#9333ea',
-                            700: '#7c3aed',
-                            800: '#6b21a8',
-                            900: '#581c87',
+                        accent:{
+                            50:'#faf5ff',100:'#f3e8ff',200:'#e9d5ff',300:'#d8b4fe',
+                            400:'#c084fc',500:'#a855f7',600:'#9333ea',700:'#7e22ce',
+                            800:'#6b21a8',900:'#581c87'
                         }
                     }
                 }
             }
         }
     </script>
-
     <style>
-        /* Custom animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
         }
 
-        .animate-fadeInUp {
-            animation: fadeInUp 0.8s ease-out forwards;
+        .card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
-        .animate-delay-1 { animation-delay: 0.2s; }
-        .animate-delay-2 { animation-delay: 0.4s; }
-        .animate-delay-3 { animation-delay: 0.6s; }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border-color: rgba(2, 132, 199, 0.3);
+        }
 
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 1rem;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1rem;
+            padding: 2px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gradient-border:hover::before {
+            opacity: 1;
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .status-badge {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .metric-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        /* Card hover effects */
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
-        }
-
-        /* Background pattern */
-        .bg-pattern {
-            background-image:
-                radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.1) 1px, transparent 0);
-            background-size: 40px 40px;
-        }
     </style>
-
     {% block extra_css %}{% endblock %}
 </head>
-<body class="font-sans bg-gray-50 text-gray-900">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <h1 class="text-2xl font-bold gradient-text">Revv Growth AI</h1>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#about" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">About</a>
-                        <a href="#metrics" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Metrics</a>
-                        <a href="#capabilities" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Capabilities</a>
-                        <a href="#contact" class="bg-primary-600 text-white px-6 py-2 rounded-full hover:bg-primary-700 transition-colors font-medium">Contact Us</a>
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <button type="button" class="text-gray-700 hover:text-primary-600 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
+<body class="font-sans bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 text-gray-900 min-h-screen">
+
+<!-- Sticky Header with Glass Morphism -->
+<header class="sticky top-0 z-50 glass-morphism shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center gap-4">
+        <div class="w-10 h-10 bg-gradient-to-br from-brand-500 to-accent-500 rounded-xl flex items-center justify-center shadow-lg">
+          <i class="fas fa-brain text-white text-lg"></i>
         </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-
-    <!-- Footer -->
-    <footer id="contact" class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="col-span-1 md:col-span-2">
-                    <h3 class="text-3xl font-bold gradient-text mb-4">Revv Growth AI</h3>
-                    <p class="text-gray-300 mb-6 max-w-md">
-                        Transforming businesses through intelligent automation and cutting-edge AI solutions.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin text-2xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-twitter text-2xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#metrics" class="text-gray-300 hover:text-white transition-colors">Our Impact</a></li>
-                        <li><a href="#capabilities" class="text-gray-300 hover:text-white transition-colors">Capabilities</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Case Studies</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
-                    <div class="space-y-2 text-gray-300">
-                        <p class="flex items-center">
-                            <i class="fas fa-envelope mr-2 text-primary-400"></i>
-                            ai@revvgrowth.com
-                        </p>
-                        <p class="flex items-center">
-                            <i class="fas fa-phone mr-2 text-primary-400"></i>
-                            +1 (555) 123-4567
-                        </p>
-                        <p class="flex items-center">
-                            <i class="fas fa-map-marker-alt mr-2 text-primary-400"></i>
-                            San Francisco, CA
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Revv Growth. All rights reserved.</p>
-            </div>
+        <div>
+          <h1 class="text-lg font-bold bg-gradient-to-r from-brand-700 to-accent-700 bg-clip-text text-transparent">
+            AI Department
+          </h1>
+          <p class="text-xs text-gray-500 font-medium">Executive Dashboard</p>
         </div>
-    </footer>
+      </div>
 
-    <!-- Scroll to top button -->
-    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-primary-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary-700">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-gray-200">
+          <i class="fas fa-filter text-brand-600 text-sm"></i>
+          <select id="userFilter" class="text-sm font-medium text-gray-700 focus:outline-none bg-transparent cursor-pointer">
+            <option value="all">All Team Members</option>
+            <option value="anuj">Anuj</option>
+            <option value="vaishali">Vaishali</option>
+          </select>
+        </div>
 
-    <script>
-        // Scroll to top functionality
-        const scrollToTopBtn = document.getElementById('scrollToTop');
+        <div class="hidden md:flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-gray-200">
+          <i class="fas fa-clock text-brand-600 text-sm"></i>
+          <span id="syncTime" class="text-sm font-medium text-gray-700"></span>
+        </div>
 
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
-                scrollToTopBtn.classList.add('opacity-100', 'visible');
-            } else {
-                scrollToTopBtn.classList.add('opacity-0', 'invisible');
-                scrollToTopBtn.classList.remove('opacity-100', 'visible');
-            }
-        });
+        <button onclick="location.reload()" class="px-4 py-2 rounded-lg bg-gradient-to-r from-brand-600 to-accent-600 text-white font-medium hover:from-brand-700 hover:to-accent-700 text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+          <i class="fas fa-sync-alt text-xs"></i>
+          <span>Refresh</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
 
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+<main class="pb-8">
+    {% block content %}{% endblock %}
+</main>
 
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+<footer class="bg-white/80 backdrop-blur border-t border-gray-200 mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-shield-alt text-brand-600"></i>
+        <span class="text-sm text-gray-600 font-medium">© 2025 Revv Growth – AI Department</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-gray-500">
+        <span class="flex items-center gap-2">
+          <i class="fas fa-lock text-xs"></i>
+          Internal Use Only
+        </span>
+        <span class="flex items-center gap-2">
+          <i class="fas fa-exclamation-triangle text-xs"></i>
+          Confidential
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fadeInUp');
-                }
-            });
-        }, observerOptions);
+<script>
+/* Live clock with smooth updates */
+const syncTime = () => {
+    const now = new Date();
+    const options = {
+        day: '2-digit',
+        month: 'short',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    };
+    document.getElementById('syncTime').textContent = now.toLocaleString('en-IN', options);
+};
+syncTime();
+setInterval(syncTime, 1000);
+</script>
+{% block extra_js %}{% endblock %}
 
-        // Observe elements
-        document.querySelectorAll('.observe-me').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-
-    {% block extra_js %}{% endblock %}
 </body>
 </html>

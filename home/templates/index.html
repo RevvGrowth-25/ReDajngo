@@ -1,307 +1,598 @@
-<!-- index.html -->
 {% extends "base.html" %}
-
-{% block title %}Revolutionizing Business with AI-Powered Automation | Revv Growth AI{% endblock %}
+{% block title %}AI Dept – Executive Dashboard{% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
-    <!-- Background decorations -->
-    <div class="absolute inset-0 bg-pattern opacity-30"></div>
-    <div class="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-200 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div class="text-center">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 observe-me">
-                <span class="block text-gray-900">Transform Your Business with</span>
-                <span class="block gradient-text mt-2">AI-Powered Automation</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto observe-me animate-delay-1">
-                Revolutionize your operations with intelligent automation solutions that save time, reduce costs, and drive unprecedented growth.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center observe-me animate-delay-2">
-                <a href="#about" class="bg-primary-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    Explore Our AI Solutions
-                </a>
-                <a href="#contact" class="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg border border-primary-200">
-                    Schedule a Demo
-                </a>
-            </div>
-        </div>
-
-        <!-- Floating elements -->
-        <div class="absolute top-1/4 left-1/4 animate-bounce">
-            <i class="fas fa-robot text-4xl text-primary-500 opacity-60"></i>
-        </div>
-        <div class="absolute top-1/3 right-1/4 animate-bounce delay-1000">
-            <i class="fas fa-brain text-3xl text-secondary-500 opacity-60"></i>
-        </div>
-        <div class="absolute bottom-1/4 left-1/3 animate-bounce delay-2000">
-            <i class="fas fa-chart-line text-3xl text-green-500 opacity-60"></i>
-        </div>
+<!-- Hero Stats Section with Gradient Cards -->
+<section class="pt-8 pb-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-6 flex items-center justify-between">
+      <div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Performance Overview</h2>
+        <p class="text-gray-600">Real-time metrics and automation insights</p>
+      </div>
+      <div class="text-right hidden md:block">
+        <div class="text-sm text-gray-500">Last Updated</div>
+        <div class="text-sm font-semibold text-gray-700">{{ data.metadata.last_updated }}</div>
+      </div>
     </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="kpiRow">
+      <!-- Filled by JS with enhanced cards -->
+    </div>
+  </div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="py-20 md:py-32 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="observe-me">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    Leading the <span class="gradient-text">AI Revolution</span> in Business Automation
-                </h2>
-                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                    At Revv Growth's AI Department, we're passionate about transforming businesses through intelligent automation. Our team of expert data scientists and AI engineers develops cutting-edge solutions that streamline operations, enhance decision-making, and drive sustainable growth.
-                </p>
-                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    We believe that AI should be accessible, practical, and results-driven. That's why we focus on creating automation solutions that deliver measurable impact from day one.
-                </p>
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="card-hover bg-gradient-to-br from-primary-50 to-primary-100 p-6 rounded-2xl">
-                        <i class="fas fa-cogs text-3xl text-primary-600 mb-3"></i>
-                        <h3 class="font-semibold text-gray-900 mb-2">Custom Solutions</h3>
-                        <p class="text-sm text-gray-600">Tailored AI automation for your unique needs</p>
-                    </div>
-                    <div class="card-hover bg-gradient-to-br from-secondary-50 to-secondary-100 p-6 rounded-2xl">
-                        <i class="fas fa-shield-alt text-3xl text-secondary-600 mb-3"></i>
-                        <h3 class="font-semibold text-gray-900 mb-2">Enterprise Ready</h3>
-                        <p class="text-sm text-gray-600">Secure, scalable, and reliable solutions</p>
-                    </div>
-                </div>
-            </div>
-            <div class="relative observe-me animate-delay-1">
-                <div class="relative z-10">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" alt="AI Team" class="rounded-2xl shadow-2xl">
-                </div>
-                <div class="absolute -top-6 -right-6 w-32 h-32 bg-primary-200 rounded-2xl opacity-30"></div>
-                <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-secondary-200 rounded-2xl opacity-30"></div>
-            </div>
+<!-- Quick Insights Banner -->
+<section class="py-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-gradient-to-r from-brand-600 to-accent-600 rounded-2xl p-6 shadow-lg text-white">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur">
+            <i class="fas fa-trophy text-2xl"></i>
+          </div>
+          <div>
+            <div class="text-sm opacity-90">Average Accuracy</div>
+            <div class="text-2xl font-bold">{{ data.metadata.avg_accuracy }}%</div>
+          </div>
         </div>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur">
+            <i class="fas fa-database text-2xl"></i>
+          </div>
+          <div>
+            <div class="text-sm opacity-90">Total Volume Processed</div>
+            <div class="text-2xl font-bold">{{ data.metadata.total_volume|stringformat:"d" }}</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur">
+            <i class="fas fa-bolt text-2xl"></i>
+          </div>
+          <div>
+            <div class="text-sm opacity-90">Active Processes</div>
+            <div class="text-2xl font-bold">{{ data.metadata.total_processes }}</div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Metrics Cards Section -->
-<section id="metrics" class="py-20 md:py-32 bg-gradient-to-br from-gray-50 to-blue-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 observe-me">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                Our <span class="gradient-text">Impact</span> in Numbers
-            </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Measurable results that speak for themselves. See how our AI solutions are transforming businesses.
-            </p>
+<!-- Charts Section with Modern Layout -->
+<section class="py-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-3 gap-6">
+
+      <!-- Bar Chart - Takes 2 columns -->
+      <div class="lg:col-span-2 bg-white rounded-2xl p-6 card shadow-md">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+              <i class="fas fa-chart-bar text-brand-600"></i>
+              Process Area Performance
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">Hours saved across different departments</p>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold metric-number" id="totalBarHours">0</div>
+            <div class="text-xs text-gray-500 font-medium">Total Hours</div>
+          </div>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Metric 1 -->
-            <div class="card-hover bg-white p-8 rounded-3xl shadow-lg observe-me">
-                <div class="flex items-center justify-center w-16 h-16 bg-primary-100 rounded-2xl mb-6">
-                    <i class="fas fa-robot text-2xl text-primary-600"></i>
-                </div>
-                <h3 class="text-4xl font-bold text-gray-900 mb-2">
-                    <span class="counter" data-target="250">0</span>+
-                </h3>
-                <p class="text-gray-600 font-medium">Total Automations Built</p>
-                <p class="text-sm text-gray-500 mt-2">And counting...</p>
-            </div>
-
-            <!-- Metric 2 -->
-            <div class="card-hover bg-white p-8 rounded-3xl shadow-lg observe-me animate-delay-1">
-                <div class="flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-2xl mb-6">
-                    <i class="fas fa-brain text-2xl text-secondary-600"></i>
-                </div>
-                <h3 class="text-4xl font-bold text-gray-900 mb-2">
-                    <span class="counter" data-target="45">0</span>
-                </h3>
-                <p class="text-gray-600 font-medium">Active AI Models</p>
-                <p class="text-sm text-gray-500 mt-2">Deployed in production</p>
-            </div>
-
-            <!-- Metric 3 -->
-            <div class="card-hover bg-white p-8 rounded-3xl shadow-lg observe-me animate-delay-2">
-                <div class="flex items-center justify-center w-16 h-16 bg-green-100 rounded-2xl mb-6">
-                    <i class="fas fa-clock text-2xl text-green-600"></i>
-                </div>
-                <h3 class="text-4xl font-bold text-gray-900 mb-2">
-                    <span class="counter" data-target="50000">0</span>+
-                </h3>
-                <p class="text-gray-600 font-medium">Hours Saved</p>
-                <p class="text-sm text-gray-500 mt-2">Through automation</p>
-            </div>
-
-            <!-- Metric 4 -->
-            <div class="card-hover bg-white p-8 rounded-3xl shadow-lg observe-me animate-delay-3">
-                <div class="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-2xl mb-6">
-                    <i class="fas fa-chart-line text-2xl text-purple-600"></i>
-                </div>
-                <h3 class="text-4xl font-bold text-gray-900 mb-2">
-                    <span class="counter" data-target="180">0</span>+
-                </h3>
-                <p class="text-gray-600 font-medium">Processes Optimized</p>
-                <p class="text-sm text-gray-500 mt-2">Across industries</p>
-            </div>
+        <div class="h-[280px]">
+          <canvas id="barChart"></canvas>
         </div>
+      </div>
+
+      <!-- Pie Chart - Takes 1 column -->
+      <div class="bg-white rounded-2xl p-6 card shadow-md">
+        <div class="mb-4">
+          <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+            <i class="fas fa-chart-pie text-accent-600"></i>
+            Team Contribution
+          </h3>
+          <p class="text-sm text-gray-500 mt-1">Distribution of work</p>
+        </div>
+        <div class="h-[280px] flex items-center justify-center">
+          <canvas id="pieChart"></canvas>
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
 
-<!-- Second Hero Section -->
-<section class="py-20 md:py-32 bg-gradient-to-r from-primary-600 to-secondary-600 relative overflow-hidden">
-    <div class="absolute inset-0 bg-black opacity-10"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="text-white observe-me">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    Featured: Intelligent Document Processing System
-                </h2>
-                <p class="text-xl mb-8 opacity-90 leading-relaxed">
-                    Our flagship AI solution automatically processes and extracts data from documents with 99.5% accuracy, reducing processing time by 85% and eliminating manual data entry errors.
-                </p>
-                <div class="space-y-4 mb-8">
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-green-300 mr-3"></i>
-                        <span>Processes 10,000+ documents per hour</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-green-300 mr-3"></i>
-                        <span>Integrates with 50+ enterprise systems</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-green-300 mr-3"></i>
-                        <span>Multi-language support with 95% accuracy</span>
-                    </div>
-                </div>
-                <a href="#" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-                    View Case Study
-                </a>
-            </div>
-            <div class="relative observe-me animate-delay-1">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" alt="Document Processing" class="rounded-2xl shadow-2xl">
-                <div class="absolute -top-4 -right-4 bg-white text-primary-600 px-6 py-3 rounded-full font-bold shadow-lg">
-                    <i class="fas fa-bolt mr-2"></i>Live Demo Available
-                </div>
-            </div>
+<!-- Line Chart Section -->
+<section class="py-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-2xl p-6 card shadow-md">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+            <i class="fas fa-chart-line text-brand-600"></i>
+            Monthly Efficiency Trend
+          </h3>
+          <p class="text-sm text-gray-500 mt-1">Tracking hours saved over time</p>
         </div>
+        <div class="flex items-center gap-4">
+          <div class="text-center px-4 py-2 bg-green-50 rounded-lg border border-green-200">
+            <div class="text-xs text-green-600 font-semibold">Growth Rate</div>
+            <div class="text-lg font-bold text-green-700" id="trendGrowth">+0%</div>
+          </div>
+          <div class="text-center px-4 py-2 bg-blue-50 rounded-lg border border-blue-200">
+            <div class="text-xs text-blue-600 font-semibold">Current Month</div>
+            <div class="text-lg font-bold text-blue-700" id="currentMonth">0</div>
+          </div>
+        </div>
+      </div>
+      <div class="h-[300px]">
+        <canvas id="lineChart"></canvas>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Stats Section -->
-<section class="py-20 md:py-32 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 observe-me">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                Why Choose <span class="gradient-text">Revv Growth AI</span>
-            </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Industry-leading performance metrics that demonstrate our commitment to excellence
-            </p>
+<!-- Enhanced Table Section -->
+<section class="py-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-2xl p-6 card shadow-md">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
+        <div>
+          <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+            <i class="fas fa-robot text-brand-600"></i>
+            Production Automations
+          </h3>
+          <p class="text-sm text-gray-500 mt-1">Detailed breakdown of active automation systems</p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center observe-me">
-                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full mb-6">
-                    <i class="fas fa-percentage text-3xl text-white"></i>
-                </div>
-                <h3 class="text-5xl font-bold text-gray-900 mb-2">
-                    <span class="counter" data-target="99.9">0</span>%
-                </h3>
-                <p class="text-lg text-gray-600">Uptime Guarantee</p>
-                <p class="text-sm text-gray-500 mt-2">Enterprise-grade reliability</p>
-            </div>
-
-            <div class="text-center observe-me animate-delay-1">
-                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-secondary-400 to-secondary-600 rounded-full mb-6">
-                    <i class="fas fa-rocket text-3xl text-white"></i>
-                </div>
-                <h3 class="text-5xl font-bold text-gray-900 mb-2">
-                    <span class="counter" data-target="75">0</span>%
-                </h3>
-                <p class="text-lg text-gray-600">Faster Deployment</p>
-                <p class="text-sm text-gray-500 mt-2">Compared to traditional methods</p>
-            </div>
-
-            <div class="text-center observe-me animate-delay-2">
-                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full mb-6">
-                    <i class="fas fa-dollar-sign text-3xl text-white"></i>
-                </div>
-                <h3 class="text-5xl font-bold text-gray-900 mb-2">
-                    <span class="counter" data-target="60">0</span>%
-                </h3>
-                <p class="text-lg text-gray-600">Cost Reduction</p>
-                <p class="text-sm text-gray-500 mt-2">Average savings for clients</p>
-            </div>
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-lg border border-green-200">
+            <i class="fas fa-check-circle text-green-600"></i>
+            <span class="text-sm font-semibold text-green-700" id="liveCount">0 Live</span>
+          </div>
+          <div class="flex items-center gap-2 bg-amber-50 px-4 py-2 rounded-lg border border-amber-200">
+            <i class="fas fa-flask text-amber-600"></i>
+            <span class="text-sm font-semibold text-amber-700" id="testingCount">0 Testing</span>
+          </div>
         </div>
+      </div>
+
+      <!-- Search and Filter -->
+      <div class="mb-4 flex items-center gap-3">
+        <div class="flex-1">
+          <input
+            type="text"
+            id="searchTable"
+            placeholder="Search processes..."
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm"
+          >
+        </div>
+        <select id="statusFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
+          <option value="all">All Status</option>
+          <option value="Live">Live Only</option>
+          <option value="Testing">Testing Only</option>
+        </select>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full">
+          <thead>
+            <tr class="border-b-2 border-gray-200">
+              <th class="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">Process Name</th>
+              <th class="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">Owner</th>
+              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('volume')">
+                Volume <i class="fas fa-sort text-xs ml-1"></i>
+              </th>
+              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('hours')">
+                Hours Saved <i class="fas fa-sort text-xs ml-1"></i>
+              </th>
+              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('accuracy')">
+                Accuracy <i class="fas fa-sort text-xs ml-1"></i>
+              </th>
+              <th class="px-4 py-3 text-center text-xs font-bold text-gray-700 uppercase tracking-wider">Status</th>
+            </tr>
+          </thead>
+          <tbody id="detailTableBody" class="divide-y divide-gray-100">
+            <!-- Filled by JS with enhanced rows -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-4 text-sm text-gray-500 text-center" id="tableInfo">
+        Showing <span id="rowCount" class="font-semibold">0</span> processes
+      </div>
     </div>
-</section>
-
-<!-- CTA Section -->
-<section class="py-20 md:py-32 bg-gradient-to-r from-primary-600 to-purple-600">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="observe-me">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Transform Your Business?
-            </h2>
-            <p class="text-xl text-white/90 mb-10">
-                Join hundreds of companies already benefiting from our AI automation solutions
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    Get Started Today
-                </a>
-                <a href="#" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-primary-600 transition-all duration-300">
-                    Schedule Consultation
-                </a>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
 {% endblock %}
 
 {% block extra_js %}
 <script>
-    // Counter animation
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
+document.addEventListener("DOMContentLoaded", function () {
+  const dashboardData = {{ data|safe }};
+  let currentUser = 'all';
+  let allRows = dashboardData.rows;
+  let filteredRows = [...allRows];
+  let sortDirection = { volume: 'desc', hours: 'desc', accuracy: 'desc' };
 
-    const countUp = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = target / speed;
+  const colors = {
+    brand: ['#0284c7', '#0369a1', '#075985', '#0c4a6e', '#38bdf8'],
+    accent: ['#9333ea', '#7e22ce', '#6b21a8', '#581c87', '#a855f7'],
+    gradient: {
+      brand: 'rgba(2, 132, 199, 0.8)',
+      brandLight: 'rgba(2, 132, 199, 0.2)',
+      accent: 'rgba(147, 51, 234, 0.8)',
+      accentLight: 'rgba(147, 51, 234, 0.2)'
+    }
+  };
 
-        if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(() => countUp(counter), 10);
-        } else {
-            counter.innerText = target;
-        }
+  const barCtx = document.getElementById('barChart').getContext('2d');
+  const pieCtx = document.getElementById('pieChart').getContext('2d');
+  const lineCtx = document.getElementById('lineChart').getContext('2d');
+
+  let barChart = null, pieChart = null, lineChart = null;
+
+  Chart.defaults.font.family = "'Inter', sans-serif";
+  Chart.defaults.color = '#6b7280';
+
+  function getData() {
+    return {
+      kpi: dashboardData.kpi[currentUser],
+      bar: dashboardData.bar[currentUser],
+      pie: dashboardData.pie[currentUser],
+      line: dashboardData.line[currentUser],
+      rows: currentUser === 'all'
+        ? filteredRows
+        : filteredRows.filter(r => r.owner.toLowerCase() === currentUser)
     };
+  }
 
-    // Intersection Observer for counters
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                countUp(entry.target);
-                counterObserver.unobserve(entry.target);
+  function renderKPI() {
+    const d = getData();
+    const kpiItems = [
+      {
+        label: 'Automations Built',
+        value: d.kpi.automations,
+        icon: 'fa-robot',
+        gradient: 'from-blue-500 to-cyan-500',
+        bgGradient: 'from-blue-50 to-cyan-50'
+      },
+      {
+        label: 'Handover Done',
+        value: d.kpi.handover,
+        icon: 'fa-handshake',
+        gradient: 'from-purple-500 to-pink-500',
+        bgGradient: 'from-purple-50 to-pink-50'
+      },
+      {
+        label: 'Hours Saved',
+        value: d.kpi.hrsSaved.toLocaleString('en-IN'),
+        icon: 'fa-clock',
+        gradient: 'from-green-500 to-emerald-500',
+        bgGradient: 'from-green-50 to-emerald-50'
+      },
+      {
+        label: 'In Production',
+        value: d.kpi.production,
+        icon: 'fa-check-circle',
+        gradient: 'from-orange-500 to-red-500',
+        bgGradient: 'from-orange-50 to-red-50'
+      }
+    ];
+
+    document.getElementById('kpiRow').innerHTML = kpiItems.map(item => `
+      <div class="relative overflow-hidden bg-gradient-to-br ${item.bgGradient} rounded-2xl p-6 card shadow-md border border-white">
+        <div class="relative z-10">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-12 h-12 bg-gradient-to-br ${item.gradient} rounded-xl flex items-center justify-center shadow-lg">
+              <i class="fas ${item.icon} text-white text-lg"></i>
+            </div>
+          </div>
+          <div class="text-3xl font-bold metric-number mb-1">${item.value}</div>
+          <div class="text-sm font-medium text-gray-600">${item.label}</div>
+        </div>
+        <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-white/30 rounded-full blur-2xl"></div>
+      </div>
+    `).join('');
+  }
+
+  function renderCharts() {
+    const d = getData();
+
+    // Update total bar hours
+    const totalBarHours = d.bar.data.reduce((a, b) => a + b, 0);
+    document.getElementById('totalBarHours').textContent = totalBarHours.toLocaleString('en-IN');
+
+    // Calculate trend growth
+    const lineData = d.line.data;
+    if (lineData.length >= 2) {
+      const growth = ((lineData[lineData.length - 1] - lineData[0]) / lineData[0] * 100).toFixed(1);
+      document.getElementById('trendGrowth').textContent = (growth > 0 ? '+' : '') + growth + '%';
+      document.getElementById('currentMonth').textContent = lineData[lineData.length - 1].toLocaleString('en-IN');
+    }
+
+    if (barChart) barChart.destroy();
+    if (pieChart) pieChart.destroy();
+    if (lineChart) lineChart.destroy();
+
+    // Enhanced Bar Chart
+    barChart = new Chart(barCtx, {
+      type: 'bar',
+      data: {
+        labels: d.bar.labels,
+        datasets: [{
+          label: 'Hours Saved',
+          data: d.bar.data,
+          backgroundColor: colors.brand.slice(0, d.bar.labels.length),
+          borderRadius: 8,
+          borderSkipped: false,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            padding: 12,
+            titleFont: { size: 14, weight: 'bold' },
+            bodyFont: { size: 13 },
+            borderColor: 'rgba(255, 255, 255, 0.1)',
+            borderWidth: 1,
+            callbacks: {
+              label: function(context) {
+                return 'Hours Saved: ' + context.parsed.y.toLocaleString('en-IN');
+              }
             }
-        });
-    }, { threshold: 0.5 });
-
-    counters.forEach(counter => {
-        counterObserver.observe(counter);
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(0, 0, 0, 0.05)', drawBorder: false },
+            ticks: { font: { size: 11 } }
+          },
+          x: {
+            grid: { display: false, drawBorder: false },
+            ticks: { font: { size: 11, weight: '600' } }
+          }
+        }
+      }
     });
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+    // Enhanced Pie Chart
+    pieChart = new Chart(pieCtx, {
+      type: 'doughnut',
+      data: {
+        labels: d.pie.labels,
+        datasets: [{
+          data: d.pie.data,
+          backgroundColor: d.pie.labels.length === 1 ?
+            [colors.gradient.brand] :
+            [colors.gradient.brand, colors.gradient.accent],
+          borderWidth: 3,
+          borderColor: '#fff',
+          hoverOffset: 10
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '65%',
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              padding: 15,
+              font: { size: 12, weight: '600' },
+              usePointStyle: true,
+              pointStyle: 'circle'
             }
-        });
+          },
+          tooltip: {
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            padding: 12,
+            bodyFont: { size: 13 },
+            callbacks: {
+              label: function(context) {
+                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                const percentage = ((context.parsed / total) * 100).toFixed(1);
+                return context.label + ': ' + context.parsed.toLocaleString('en-IN') + ' hrs (' + percentage + '%)';
+              }
+            }
+          }
+        }
+      }
     });
+
+    // Enhanced Line Chart
+    lineChart = new Chart(lineCtx, {
+      type: 'line',
+      data: {
+        labels: d.line.labels,
+        datasets: [{
+          label: 'Hours Saved',
+          data: d.line.data,
+          borderColor: colors.gradient.brand,
+          backgroundColor: colors.gradient.brandLight,
+          borderWidth: 3,
+          tension: 0.4,
+          fill: true,
+          pointRadius: 6,
+          pointHoverRadius: 8,
+          pointBackgroundColor: '#fff',
+          pointBorderColor: colors.gradient.brand,
+          pointBorderWidth: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            padding: 12,
+            bodyFont: { size: 13 },
+            callbacks: {
+              label: function(context) {
+                return 'Hours: ' + context.parsed.y.toLocaleString('en-IN');
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(0, 0, 0, 0.05)', drawBorder: false },
+            ticks: { font: { size: 11 } }
+          },
+          x: {
+            grid: { display: false, drawBorder: false },
+            ticks: { font: { size: 11, weight: '600' } }
+          }
+        }
+      }
+    });
+  }
+
+  function renderTable() {
+    const d = getData();
+    const liveCount = d.rows.filter(r => r.status === 'Live').length;
+    const testingCount = d.rows.filter(r => r.status === 'Testing').length;
+
+    document.getElementById('liveCount').textContent = liveCount + ' Live';
+    document.getElementById('testingCount').textContent = testingCount + ' Testing';
+    document.getElementById('rowCount').textContent = d.rows.length;
+
+    document.getElementById('detailTableBody').innerHTML = d.rows.map((r, idx) => `
+      <tr class="hover:bg-gray-50 transition-colors table-row" style="animation: fadeIn 0.3s ease-in ${idx * 0.03}s both;"
+          data-process="${r.process.toLowerCase()}"
+          data-status="${r.status}">
+        <td class="px-4 py-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-brand-100 to-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-cog text-brand-600"></i>
+            </div>
+            <span class="font-semibold text-gray-800">${r.process}</span>
+          </div>
+        </td>
+        <td class="px-4 py-4">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+              ${r.owner.charAt(0).toUpperCase()}
+            </div>
+            <span class="text-gray-700 font-medium">${r.owner}</span>
+          </div>
+        </td>
+        <td class="px-4 py-4 text-right">
+          <span class="font-semibold text-gray-800">${r.volume.toLocaleString('en-IN')}</span>
+        </td>
+        <td class="px-4 py-4 text-right">
+          <span class="font-bold text-brand-600">${r.hrsSaved.toLocaleString('en-IN')}</span>
+        </td>
+        <td class="px-4 py-4 text-right">
+          <div class="flex items-center justify-end gap-2">
+            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full transition-all duration-500" style="width: ${r.accuracy}%"></div>
+            </div>
+            <span class="font-semibold text-gray-700">${r.accuracy}%</span>
+          </div>
+        </td>
+        <td class="px-4 py-4 text-center">
+          <span class="status-badge inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${
+            r.status === 'Live'
+              ? 'bg-green-100 text-green-700 border border-green-200'
+              : 'bg-amber-100 text-amber-700 border border-amber-200'
+          }">
+            <span class="w-2 h-2 ${r.status === 'Live' ? 'bg-green-500' : 'bg-amber-500'} rounded-full animate-pulse"></span>
+            ${r.status}
+          </span>
+  </span>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  // Search functionality
+  document.getElementById('searchTable').addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    const statusFilter = document.getElementById('statusFilter').value;
+
+    filteredRows = allRows.filter(row => {
+      const matchesSearch = row.process.toLowerCase().includes(searchTerm) ||
+                           row.owner.toLowerCase().includes(searchTerm);
+      const matchesStatus = statusFilter === 'all' || row.status === statusFilter;
+      return matchesSearch && matchesStatus;
+    });
+
+    renderTable();
+  });
+
+  // Status filter
+  document.getElementById('statusFilter').addEventListener('change', function() {
+    document.getElementById('searchTable').dispatchEvent(new Event('input'));
+  });
+
+  // Sort functionality
+  window.sortTable = function(column) {
+    const sortKey = {
+      'volume': 'volume',
+      'hours': 'hrsSaved',
+      'accuracy': 'accuracy'
+    }[column];
+
+    const direction = sortDirection[column] === 'desc' ? 'asc' : 'desc';
+    sortDirection[column] = direction;
+
+    filteredRows.sort((a, b) => {
+      if (direction === 'desc') {
+        return b[sortKey] - a[sortKey];
+      } else {
+        return a[sortKey] - b[sortKey];
+      }
+    });
+
+    renderTable();
+  };
+
+  // User filter handler
+  document.getElementById('userFilter').addEventListener('change', function() {
+    currentUser = this.value;
+    filteredRows = currentUser === 'all'
+      ? [...allRows]
+      : allRows.filter(r => r.owner.toLowerCase() === currentUser);
+
+    // Reset filters
+    document.getElementById('searchTable').value = '';
+    document.getElementById('statusFilter').value = 'all';
+
+    renderKPI();
+    renderCharts();
+    renderTable();
+  });
+
+  // Initial render
+  renderKPI();
+  renderCharts();
+  renderTable();
+
+  // Add smooth scroll animation for sections
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section').forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'all 0.6s ease-out';
+    observer.observe(section);
+  });
+});
 </script>
 {% endblock %}
