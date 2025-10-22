@@ -15,13 +15,13 @@ def ceo_dashboard(request):
                 "hrsSaved": 1840,
                 "production": 10
             },
-            "anuj": {
+            "Ayush": {
                 "automations": 8,
                 "handover": 6,
                 "hrsSaved": 920,
                 "production": 5
             },
-            "vaishali": {
+            "Divya": {
                 "automations": 7,
                 "handover": 6,
                 "hrsSaved": 920,
@@ -34,11 +34,11 @@ def ceo_dashboard(request):
                 "labels": ["Operations", "Finance", "HR", "Sales", "Support"],
                 "data": [520, 380, 340, 320, 280]
             },
-            "anuj": {
+            "Ayush": {
                 "labels": ["Operations", "Finance", "Sales"],
                 "data": [280, 200, 180]
             },
-            "vaishali": {
+            "Divya": {
                 "labels": ["HR", "Support", "Operations"],
                 "data": [280, 260, 180]
             },
@@ -46,29 +46,29 @@ def ceo_dashboard(request):
 
         "pie": {
             "all": {
-                "labels": ["Anuj", "Vaishali"],
+                "labels": ["Ayush", "Divya"],
                 "data": [920, 920]
             },
-            "anuj": {
-                "labels": ["Anuj"],
+            "Ayush": {
+                "labels": ["Ayush"],
                 "data": [920]
             },
-            "vaishali": {
-                "labels": ["Vaishali"],
+            "Divya": {
+                "labels": ["Divya"],
                 "data": [920]
             },
         },
 
         "line": {
             "all": {
-                "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-                "data": [180, 240, 320, 380, 450, 520]
+                "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                "data": [0, 2, 5, 6, 8, 14,8,23,]
             },
-            "anuj": {
+            "Ayush": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
                 "data": [90, 120, 160, 190, 225, 260]
             },
-            "vaishali": {
+            "Divya": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
                 "data": [90, 120, 160, 190, 225, 260]
             },
@@ -77,124 +77,93 @@ def ceo_dashboard(request):
         "rows": [
             {
                 "process": "Invoice Processing Bot",
-                "owner": "Anuj",
-                "volume": 2400,
+                "owner": "Ayush",
+                "Department": "HR",
                 "hrsSaved": 180,
                 "accuracy": 96,
                 "status": "Live"
             },
             {
                 "process": "HR Onboarding Automation",
-                "owner": "Vaishali",
-                "volume": 1800,
+                "owner": "Divya",
+                "Department": "HR",
                 "hrsSaved": 140,
                 "accuracy": 94,
                 "status": "Live"
             },
             {
                 "process": "Purchase Order Tracker",
-                "owner": "Anuj",
-                "volume": 1500,
+                "owner": "Ayush",
+                "Department": "HR",
                 "hrsSaved": 120,
                 "accuracy": 95,
                 "status": "Live"
             },
             {
                 "process": "Customer Support Classifier",
-                "owner": "Vaishali",
-                "volume": 3200,
+                "owner": "Divya",
+                "Department": "HR",
                 "hrsSaved": 160,
                 "accuracy": 92,
                 "status": "Live"
             },
             {
                 "process": "Expense Report Validator",
-                "owner": "Anuj",
-                "volume": 1200,
+                "owner": "Ayush",
+                "Department": "HR",
                 "hrsSaved": 95,
                 "accuracy": 93,
                 "status": "Live"
             },
             {
                 "process": "Contract Review Assistant",
-                "owner": "Vaishali",
-                "volume": 800,
+                "owner": "Divya",
+                "Department": "HR",
                 "hrsSaved": 110,
                 "accuracy": 91,
                 "status": "Testing"
             },
             {
                 "process": "Inventory Management Bot",
-                "owner": "Anuj",
-                "volume": 2000,
+                "owner": "Ayush",
+                "Department": "HR",
                 "hrsSaved": 130,
                 "accuracy": 97,
                 "status": "Live"
             },
             {
                 "process": "Leave Application Processor",
-                "owner": "Vaishali",
-                "volume": 1600,
+                "owner": "Divya",
+                "Department": "HR",
                 "hrsSaved": 85,
                 "accuracy": 98,
                 "status": "Live"
             },
             {
                 "process": "Sales Lead Qualifier",
-                "owner": "Anuj",
-                "volume": 2800,
+                "owner": "Ayush",
+                "Department": "HR",
                 "hrsSaved": 145,
                 "accuracy": 89,
                 "status": "Live"
             },
             {
                 "process": "Email Response Generator",
-                "owner": "Vaishali",
-                "volume": 4500,
+                "owner": "Divya",
+                "Department": "HR",
                 "hrsSaved": 200,
                 "accuracy": 90,
                 "status": "Live"
             },
             {
                 "process": "Data Entry Bot",
-                "owner": "Anuj",
-                "volume": 1100,
+                "owner": "Ayush",
+                "Department": "HR",
                 "hrsSaved": 75,
                 "accuracy": 94,
                 "status": "Testing"
             },
-            {
-                "process": "Meeting Scheduler",
-                "owner": "Vaishali",
-                "volume": 900,
-                "hrsSaved": 60,
-                "accuracy": 95,
-                "status": "Testing"
-            },
-            {
-                "process": "Document Classifier",
-                "owner": "Anuj",
-                "volume": 1700,
-                "hrsSaved": 105,
-                "accuracy": 93,
-                "status": "Live"
-            },
-            {
-                "process": "Payroll Automation",
-                "owner": "Vaishali",
-                "volume": 1300,
-                "hrsSaved": 115,
-                "accuracy": 99,
-                "status": "Testing"
-            },
-            {
-                "process": "Compliance Checker",
-                "owner": "Anuj",
-                "volume": 950,
-                "hrsSaved": 85,
-                "accuracy": 92,
-                "status": "Testing"
-            },
+
         ],
 
         # Additional metadata
@@ -202,7 +171,7 @@ def ceo_dashboard(request):
             "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "total_processes": 15,
             "avg_accuracy": 94,
-            "total_volume": 28550
+            "total_Department": 28550
         }
     }
 
