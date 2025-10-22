@@ -2,7 +2,7 @@
 {% block title %}AI Dept – Executive Dashboard{% endblock %}
 
 {% block content %}
-<!-- Hero Stats Section with Gradient Cards -->
+<!-- Hero Stats -->
 <section class="pt-8 pb-6">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mb-6 flex items-center justify-between">
@@ -16,9 +16,9 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="kpiRow">
-      <!-- Filled by JS with enhanced cards -->
-    </div>
+
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="kpiRow"></div>
   </div>
 </section>
 
@@ -28,27 +28,21 @@
     <div class="bg-gradient-to-r from-brand-600 to-accent-600 rounded-2xl p-6 shadow-lg text-white">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur">
-            <i class="fas fa-trophy text-2xl"></i>
-          </div>
+          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur"><i class="fas fa-trophy text-2xl"></i></div>
           <div>
             <div class="text-sm opacity-90">Average Accuracy</div>
             <div class="text-2xl font-bold">{{ data.metadata.avg_accuracy }}%</div>
           </div>
         </div>
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur">
-            <i class="fas fa-database text-2xl"></i>
-          </div>
+          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur"><i class="fas fa-database text-2xl"></i></div>
           <div>
-            <div class="text-sm opacity-90">Total Department Processed</div>
-            <div class="text-2xl font-bold">{{ data.metadata.total_Department|stringformat:"d" }}</div>
+            <div class="text-sm opacity-90">Total Departments</div>
+            <div class="text-2xl font-bold">{{ data.metadata.total_Department }}</div>
           </div>
         </div>
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur">
-            <i class="fas fa-bolt text-2xl"></i>
-          </div>
+          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur"><i class="fas fa-bolt text-2xl"></i></div>
           <div>
             <div class="text-sm opacity-90">Active Processes</div>
             <div class="text-2xl font-bold">{{ data.metadata.total_processes }}</div>
@@ -59,60 +53,45 @@
   </div>
 </section>
 
-<!-- Charts Section with Modern Layout -->
+<!-- Charts -->
 <section class="py-6">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-3 gap-6">
-
-      <!-- Bar Chart - Takes 2 columns -->
+      <!-- Bar Chart -->
       <div class="lg:col-span-2 bg-white rounded-2xl p-6 card shadow-md">
         <div class="flex items-center justify-between mb-4">
           <div>
-            <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
-              <i class="fas fa-chart-bar text-brand-600"></i>
-              Process Area Performance
-            </h3>
-            <p class="text-sm text-gray-500 mt-1">Hours saved across different departments</p>
+            <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-chart-bar text-brand-600"></i>Process Area Performance</h3>
+            <p class="text-sm text-gray-500 mt-1">Department-wise project distribution</p>
           </div>
           <div class="text-right">
             <div class="text-2xl font-bold metric-number" id="totalBarHours">0</div>
-            <div class="text-xs text-gray-500 font-medium">Total Hours</div>
+            <div class="text-xs text-gray-500 font-medium">Total Projects</div>
           </div>
         </div>
-        <div class="h-[280px]">
-          <canvas id="barChart"></canvas>
-        </div>
+        <div class="h-[280px]"><canvas id="barChart"></canvas></div>
       </div>
 
-      <!-- Pie Chart - Takes 1 column -->
+      <!-- Pie Chart -->
       <div class="bg-white rounded-2xl p-6 card shadow-md">
         <div class="mb-4">
-          <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
-            <i class="fas fa-chart-pie text-accent-600"></i>
-            Team Contribution
-          </h3>
+          <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-chart-pie text-accent-600"></i>Team Contribution</h3>
           <p class="text-sm text-gray-500 mt-1">Distribution of work</p>
         </div>
-        <div class="h-[280px] flex items-center justify-center">
-          <canvas id="pieChart"></canvas>
-        </div>
+        <div class="h-[280px] flex items-center justify-center"><canvas id="pieChart"></canvas></div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- Line Chart Section -->
+<!-- Line Chart -->
 <section class="py-6">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-white rounded-2xl p-6 card shadow-md">
       <div class="flex items-center justify-between mb-4">
         <div>
-          <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
-            <i class="fas fa-chart-line text-brand-600"></i>
-            Monthly Efficiency Trend
-          </h3>
-          <p class="text-sm text-gray-500 mt-1">Tracking hours saved over time</p>
+          <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-chart-line text-brand-600"></i>Monthly Efficiency Trend</h3>
+          <p class="text-sm text-gray-500 mt-1">Tracking project over months</p>
         </div>
         <div class="flex items-center gap-4">
           <div class="text-center px-4 py-2 bg-green-50 rounded-lg border border-green-200">
@@ -125,23 +104,18 @@
           </div>
         </div>
       </div>
-      <div class="h-[300px]">
-        <canvas id="lineChart"></canvas>
-      </div>
+      <div class="h-[300px]"><canvas id="lineChart"></canvas></div>
     </div>
   </div>
 </section>
 
-<!-- Enhanced Table Section -->
+<!-- Production Automations Table -->
 <section class="py-6">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-white rounded-2xl p-6 card shadow-md">
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
         <div>
-          <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
-            <i class="fas fa-robot text-brand-600"></i>
-            Production Automations
-          </h3>
+          <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-robot text-brand-600"></i>Production Automations</h3>
           <p class="text-sm text-gray-500 mt-1">Detailed breakdown of active automation systems</p>
         </div>
         <div class="flex items-center gap-3">
@@ -156,15 +130,11 @@
         </div>
       </div>
 
-      <!-- Search and Filter -->
+      <!-- Search & Status Filter -->
       <div class="mb-4 flex items-center gap-3">
         <div class="flex-1">
-          <input
-            type="text"
-            id="searchTable"
-            placeholder="Search processes..."
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm"
-          >
+          <input type="text" id="searchTable" placeholder="Search processes..."
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
         </div>
         <select id="statusFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
           <option value="all">All Status</option>
@@ -182,8 +152,8 @@
               <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('Department')">
                 Department <i class="fas fa-sort text-xs ml-1"></i>
               </th>
-              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('hours')">
-                Hours Saved <i class="fas fa-sort text-xs ml-1"></i>
+              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('hrsSaved')">
+                Project <i class="fas fa-sort text-xs ml-1"></i>
               </th>
               <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('accuracy')">
                 Accuracy <i class="fas fa-sort text-xs ml-1"></i>
@@ -191,9 +161,7 @@
               <th class="px-4 py-3 text-center text-xs font-bold text-gray-700 uppercase tracking-wider">Status</th>
             </tr>
           </thead>
-          <tbody id="detailTableBody" class="divide-y divide-gray-100">
-            <!-- Filled by JS with enhanced rows -->
-          </tbody>
+          <tbody id="detailTableBody" class="divide-y divide-gray-100"></tbody>
         </table>
       </div>
 
@@ -207,197 +175,142 @@
 
 {% block extra_js %}
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const dashboardData = {{ data|safe }};
   let currentUser = 'all';
-  let allRows = dashboardData.rows;
+  let allRows   = [...dashboardData.rows];
   let filteredRows = [...allRows];
-  let sortDirection = { Department: 'desc', Project: 'desc', accuracy: 'desc' };
+  const sortDirection = { Department: 'desc', hrsSaved: 'desc', accuracy: 'desc' };
 
   const colors = {
-    brand: ['#0284c7', '#0369a1', '#075985', '#0c4a6e', '#38bdf8'],
-    accent: ['#9333ea', '#7e22ce', '#6b21a8', '#581c87', '#a855f7'],
-    gradient: {
-      brand: 'rgba(2, 132, 199, 0.8)',
-      brandLight: 'rgba(2, 132, 199, 0.2)',
-      accent: 'rgba(147, 51, 234, 0.8)',
-      accentLight: 'rgba(147, 51, 234, 0.2)'
-    }
+    brand: ['#0284c7','#0369a1','#075985','#0c4a6e','#38bdf8'],
+    accent:['#9333ea','#7e22ce','#6b21a8','#581c87','#a855f7'],
+    gradient:{ brand:'rgba(2,132,199,0.8)', brandLight:'rgba(2,132,199,0.2)', accent:'rgba(147,51,234,0.8)', accentLight:'rgba(147,51,234,0.2)' }
   };
 
   const barCtx = document.getElementById('barChart').getContext('2d');
   const pieCtx = document.getElementById('pieChart').getContext('2d');
   const lineCtx = document.getElementById('lineChart').getContext('2d');
-
-  let barChart = null, pieChart = null, lineChart = null;
+  let barChart, pieChart, lineChart;
 
   Chart.defaults.font.family = "'Inter', sans-serif";
   Chart.defaults.color = '#6b7280';
 
-  function getData() {
-    return {
-      kpi: dashboardData.kpi[currentUser],
-      bar: dashboardData.bar[currentUser],
-      pie: dashboardData.pie[currentUser],
-      line: dashboardData.line[currentUser],
-      rows: currentUser === 'all'
-        ? filteredRows
-        : filteredRows.filter(r => r.owner.toLowerCase() === currentUser)
-    };
-  }
+  /* ---------- helpers ---------- */
+  function getData(){
+  return {
+    kpi: dashboardData.kpi[currentUser],
+    bar: dashboardData.bar[currentUser],
+    pie: dashboardData.pie[currentUser],
+    line: dashboardData.line[currentUser],
+    rows: currentUser === 'all'
+      ? filteredRows
+      : filteredRows.filter(r =>
+          r.owner.toLowerCase().includes(currentUser.toLowerCase())
+        )
+  };
+}
 
-  function renderKPI() {
+  /* ---------- KPI cards ---------- */
+  function renderKPI(){
     const d = getData();
-    const kpiItems = [
-      {
-        label: 'Automations Built',
-        value: d.kpi.automations,
-        icon: 'fa-robot',
-        gradient: 'from-blue-500 to-cyan-500',
-        bgGradient: 'from-blue-50 to-cyan-50'
-      },
-      {
-        label: 'Handover Done',
-        value: d.kpi.handover,
-        icon: 'fa-handshake',
-        gradient: 'from-purple-500 to-pink-500',
-        bgGradient: 'from-purple-50 to-pink-50'
-      },
-      {
-        label: 'Project Saved',
-        value: d.kpi.hrsSaved.toLocaleString('en-IN'),
-        icon: 'fa-clock',
-        gradient: 'from-green-500 to-emerald-500',
-        bgGradient: 'from-green-50 to-emerald-50'
-      },
-      {
-        label: 'In Production',
-        value: d.kpi.production,
-        icon: 'fa-check-circle',
-        gradient: 'from-orange-500 to-red-500',
-        bgGradient: 'from-orange-50 to-red-50'
-      }
+    const items = [
+      {label:'Automations Built', value:d.kpi.automations, icon:'fa-robot', gradient:'from-blue-500 to-cyan-500', bgGradient:'from-blue-50 to-cyan-50'},
+      {label:'Handover Done', value:d.kpi.handover, icon:'fa-handshake', gradient:'from-purple-500 to-pink-500', bgGradient:'from-purple-50 to-pink-50'},
+      {label:'Hours Saved', value:d.kpi.hrsSaved.toLocaleString('en-IN'), icon:'fa-clock', gradient:'from-green-500 to-emerald-500', bgGradient:'from-green-50 to-emerald-50'},
+      {label:'In Production', value:d.kpi.production, icon:'fa-check-circle', gradient:'from-orange-500 to-red-500', bgGradient:'from-orange-50 to-red-50'}
     ];
-
-    document.getElementById('kpiRow').innerHTML = kpiItems.map(item => `
-      <div class="relative overflow-hidden bg-gradient-to-br ${item.bgGradient} rounded-2xl p-6 card shadow-md border border-white">
+    document.getElementById('kpiRow').innerHTML = items.map(it =>
+      `<div class="relative overflow-hidden bg-gradient-to-br ${it.bgGradient} rounded-2xl p-6 card shadow-md border border-white">
         <div class="relative z-10">
           <div class="flex items-center justify-between mb-3">
-            <div class="w-12 h-12 bg-gradient-to-br ${item.gradient} rounded-xl flex items-center justify-center shadow-lg">
-              <i class="fas ${item.icon} text-white text-lg"></i>
+            <div class="w-12 h-12 bg-gradient-to-br ${it.gradient} rounded-xl flex items-center justify-center shadow-lg">
+              <i class="fas ${it.icon} text-white text-lg"></i>
             </div>
           </div>
-          <div class="text-3xl font-bold metric-number mb-1">${item.value}</div>
-          <div class="text-sm font-medium text-gray-600">${item.label}</div>
+          <div class="text-3xl font-bold metric-number mb-1">${it.value}</div>
+          <div class="text-sm font-medium text-gray-600">${it.label}</div>
         </div>
         <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-white/30 rounded-full blur-2xl"></div>
-      </div>
-    `).join('');
+      </div>`).join('');
   }
 
-  function renderCharts() {
+  /* ---------- charts ---------- */
+  function renderCharts(){
     const d = getData();
-
-    // Update total bar hours
-    const totalBarHours = d.bar.data.reduce((a, b) => a + b, 0);
-    document.getElementById('totalBarHours').textContent = totalBarHours.toLocaleString('en-IN');
-
-    // Calculate trend growth
+    const totalBar = d.bar.data.reduce((a,b)=>a+b,0);
+    document.getElementById('totalBarHours').textContent = totalBar.toLocaleString('en-IN');
     const lineData = d.line.data;
-    if (lineData.length >= 2) {
-      const growth = ((lineData[lineData.length - 1] - lineData[0]) / lineData[0] * 100).toFixed(1);
-      document.getElementById('trendGrowth').textContent = (growth > 0 ? '+' : '') + growth + '%';
-      document.getElementById('currentMonth').textContent = lineData[lineData.length - 1].toLocaleString('en-IN');
+    if(lineData.length>=2){
+      const growth = ((lineData[lineData.length-1]-lineData[0])/lineData[0]*100).toFixed(1);
+      document.getElementById('trendGrowth').textContent = (growth>0?'+':'')+growth+'%';
+      document.getElementById('currentMonth').textContent = lineData[lineData.length-1].toLocaleString('en-IN');
     }
 
-    if (barChart) barChart.destroy();
-    if (pieChart) pieChart.destroy();
-    if (lineChart) lineChart.destroy();
+    if(barChart) barChart.destroy();
+    if(pieChart) pieChart.destroy();
+    if(lineChart) lineChart.destroy();
 
-    // Enhanced Bar Chart
     barChart = new Chart(barCtx, {
-      type: 'bar',
-      data: {
-        labels: d.bar.labels,
-        datasets: [{
-          label: 'Project Saved',
-          data: d.bar.data,
-          backgroundColor: colors.brand.slice(0, d.bar.labels.length),
-          borderRadius: 8,
-          borderSkipped: false,
+      type:'bar',
+      data:{
+        labels:d.bar.labels,
+        datasets:[{
+          label:'Projects',
+          data:d.bar.data,
+          backgroundColor:colors.brand.slice(0,d.bar.labels.length),
+          borderRadius:8,
+          borderSkipped:false
         }]
       },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-            padding: 12,
-            titleFont: { size: 14, weight: 'bold' },
-            bodyFont: { size: 13 },
-            borderColor: 'rgba(255, 255, 255, 0.1)',
-            borderWidth: 1,
-            callbacks: {
-              label: function(context) {
-                return 'Project Saved: ' + context.parsed.y.toLocaleString('en-IN');
-              }
-            }
+      options:{
+        responsive:true,
+        maintainAspectRatio:false,
+        plugins:{
+          legend:{display:false},
+          tooltip:{
+            callbacks:{label:ctx=>'Projects: '+ctx.parsed.y.toLocaleString('en-IN')}
           }
         },
-        scales: {
-          y: {
-            beginAtZero: true,
-            grid: { color: 'rgba(0, 0, 0, 0.05)', drawBorder: false },
-            ticks: { font: { size: 11 } }
-          },
-          x: {
-            grid: { display: false, drawBorder: false },
-            ticks: { font: { size: 11, weight: '600' } }
-          }
+        scales:{
+          y:{beginAtZero:true, grid:{color:'rgba(0,0,0,0.05)', drawBorder:false}},
+          x:{grid:{display:false, drawBorder:false}}
         }
       }
     });
 
-    // Enhanced Pie Chart
     pieChart = new Chart(pieCtx, {
-      type: 'doughnut',
-      data: {
-        labels: d.pie.labels,
-        datasets: [{
-          data: d.pie.data,
-          backgroundColor: d.pie.labels.length === 1 ?
-            [colors.gradient.brand] :
-            [colors.gradient.brand, colors.gradient.accent],
-          borderWidth: 3,
-          borderColor: '#fff',
-          hoverOffset: 10
+      type:'doughnut',
+      data:{
+        labels:d.pie.labels,
+        datasets:[{
+          data:d.pie.data,
+          backgroundColor:d.pie.labels.length===1?[colors.gradient.brand]:[colors.gradient.brand, colors.gradient.accent],
+          borderWidth:3,
+          borderColor:'#fff',
+          hoverOffset:10
         }]
       },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '65%',
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: {
-              padding: 15,
-              font: { size: 12, weight: '600' },
-              usePointStyle: true,
-              pointStyle: 'circle'
+      options:{
+        responsive:true,
+        maintainAspectRatio:false,
+        cutout:'65%',
+        plugins:{
+          legend:{
+            position:'bottom',
+            labels:{
+              padding:15,
+              font:{size:12, weight:'600'},
+              usePointStyle:true,
+              pointStyle:'circle'
             }
           },
-          tooltip: {
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-            padding: 12,
-            bodyFont: { size: 13 },
-            callbacks: {
-              label: function(context) {
-                const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                const percentage = ((context.parsed / total) * 100).toFixed(1);
-                return context.label + ': ' + context.parsed.toLocaleString('en-IN') + ' hrs (' + percentage + '%)';
+          tooltip:{
+            callbacks:{
+              label:ctx=>{
+                const total = ctx.dataset.data.reduce((a,b)=>a+b,0);
+                const pct = ((ctx.parsed/total)*100).toFixed(1);
+                return ctx.label+': '+ctx.parsed.toLocaleString('en-IN')+' ('+pct+'%)';
               }
             }
           }
@@ -405,193 +318,136 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Enhanced Line Chart
     lineChart = new Chart(lineCtx, {
-      type: 'line',
-      data: {
-        labels: d.line.labels,
-        datasets: [{
-          label: 'Project Saved',
-          data: d.line.data,
-          borderColor: colors.gradient.brand,
-          backgroundColor: colors.gradient.brandLight,
-          borderWidth: 3,
-          tension: 0.4,
-          fill: true,
-          pointRadius: 6,
-          pointHoverRadius: 8,
-          pointBackgroundColor: '#fff',
-          pointBorderColor: colors.gradient.brand,
-          pointBorderWidth: 3
+      type:'line',
+      data:{
+        labels:d.line.labels,
+        datasets:[{
+          label:'Project',
+          data:d.line.data,
+          borderColor:colors.gradient.brand,
+          backgroundColor:colors.gradient.brandLight,
+          borderWidth:3,
+          tension:0.4,
+          fill:true,
+          pointRadius:6,
+          pointHoverRadius:8,
+          pointBackgroundColor:'#fff',
+          pointBorderColor:colors.gradient.brand,
+          pointBorderWidth:3
         }]
       },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-            padding: 12,
-            bodyFont: { size: 13 },
-            callbacks: {
-              label: function(context) {
-                return 'Project: ' + context.parsed.y.toLocaleString('en-IN');
-              }
-            }
+      options:{
+        responsive:true,
+        maintainAspectRatio:false,
+        plugins:{
+          legend:{display:false},
+          tooltip:{
+            callbacks:{label:ctx=>'Project: '+ctx.parsed.y.toLocaleString('en-IN')}
           }
         },
-        scales: {
-          y: {
-            beginAtZero: true,
-            grid: { color: 'rgba(0, 0, 0, 0.05)', drawBorder: false },
-            ticks: { font: { size: 11 } }
-          },
-          x: {
-            grid: { display: false, drawBorder: false },
-            ticks: { font: { size: 11, weight: '600' } }
-          }
+        scales:{
+          y:{beginAtZero:true, grid:{color:'rgba(0,0,0,0.05)', drawBorder:false}},
+          x:{grid:{display:false, drawBorder:false}}
         }
       }
     });
   }
 
-  function renderTable() {
+  /* ---------- table ---------- */
+  function renderTable(){
     const d = getData();
-    const liveCount = d.rows.filter(r => r.status === 'Live').length;
-    const testingCount = d.rows.filter(r => r.status === 'Testing').length;
-
-    document.getElementById('liveCount').textContent = liveCount + ' Live';
-    document.getElementById('testingCount').textContent = testingCount + ' Testing';
+    const live = d.rows.filter(r=>r.status==='Live').length;
+    const testing = d.rows.filter(r=>r.status==='Testing').length;
+    document.getElementById('liveCount').textContent = live+' Live';
+    document.getElementById('testingCount').textContent = testing+' Testing';
     document.getElementById('rowCount').textContent = d.rows.length;
-
-    document.getElementById('detailTableBody').innerHTML = d.rows.map((r, idx) => `
-      <tr class="hover:bg-gray-50 transition-colors table-row" style="animation: fadeIn 0.3s ease-in ${idx * 0.03}s both;"
-          data-process="${r.process.toLowerCase()}"
-          data-status="${r.status}">
+    document.getElementById('detailTableBody').innerHTML = d.rows.map((r,idx)=>
+      `<tr class="hover:bg-gray-50 transition-colors table-row" style="animation:fadeIn .3s ease-in ${idx*.03}s both;">
         <td class="px-4 py-4">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-gradient-to-br from-brand-100 to-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <i class="fas fa-cog text-brand-600"></i>
-            </div>
+            <div class="w-10 h-10 bg-gradient-to-br from-brand-100 to-accent-100 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-cog text-brand-600"></i></div>
             <span class="font-semibold text-gray-800">${r.process}</span>
           </div>
         </td>
         <td class="px-4 py-4">
           <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-              ${r.owner.charAt(0).toUpperCase()}
-            </div>
+            <div class="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">${r.owner.charAt(0).toUpperCase()}</div>
             <span class="text-gray-700 font-medium">${r.owner}</span>
           </div>
         </td>
-        <td class="px-4 py-4 text-right">
-          <span class="font-semibold text-gray-800">${r.Department.toLocaleString('en-IN')}</span>
-        </td>
-        <td class="px-4 py-4 text-right">
-          <span class="font-bold text-brand-600">${r.hrsSaved.toLocaleString('en-IN')}</span>
-        </td>
+        <td class="px-4 py-4 text-right"><span class="font-semibold text-gray-800">${(r.Department).toLocaleString('en-IN')}</span></td>
+        <td class="px-4 py-4 text-right"><span class="font-bold text-brand-600">${Number(r.hrsSaved).toLocaleString('en-IN')}</span></td>
         <td class="px-4 py-4 text-right">
           <div class="flex items-center justify-end gap-2">
-            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full transition-all duration-500" style="width: ${r.accuracy}%"></div>
-            </div>
+            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full" style="width:${r.accuracy}%"></div></div>
             <span class="font-semibold text-gray-700">${r.accuracy}%</span>
           </div>
         </td>
         <td class="px-4 py-4 text-center">
-          <span class="status-badge inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${
-            r.status === 'Live'
-              ? 'bg-green-100 text-green-700 border border-green-200'
-              : 'bg-amber-100 text-amber-700 border border-amber-200'
-          }">
-            <span class="w-2 h-2 ${r.status === 'Live' ? 'bg-green-500' : 'bg-amber-500'} rounded-full animate-pulse"></span>
-            ${r.status}
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border ${r.status==='Live'?'bg-green-100 text-green-700 border-green-200':'bg-amber-100 text-amber-700 border-amber-200'}">
+            <span class="w-2 h-2 ${r.status==='Live'?'bg-green-500':'bg-amber-500'} rounded-full animate-pulse"></span>${r.status}
           </span>
-  </span>
         </td>
-      </tr>
-    `).join('');
+      </tr>`
+    ).join('');
   }
 
-  // Search functionality
-  document.getElementById('searchTable').addEventListener('input', function(e) {
-    const searchTerm = e.target.value.toLowerCase();
-    const statusFilter = document.getElementById('statusFilter').value;
-
-    filteredRows = allRows.filter(row => {
-      const matchesSearch = row.process.toLowerCase().includes(searchTerm) ||
-                           row.owner.toLowerCase().includes(searchTerm);
-      const matchesStatus = statusFilter === 'all' || row.status === statusFilter;
-      return matchesSearch && matchesStatus;
+  /* ---------- sort ---------- */
+  window.sortTable = function(col){
+    const key = {Department:'Department', hrsSaved:'hrsSaved', accuracy:'accuracy'}[col];
+    sortDirection[col] = sortDirection[col]==='desc'?'asc':'desc';
+    const dir = sortDirection[col];
+    filteredRows.sort((a,b)=>{
+      const va = a[key], vb = b[key];
+      if(typeof va==='string') return dir==='desc'?vb.localeCompare(va):va.localeCompare(vb);
+      return dir==='desc'?vb-va:va-vb;
     });
-
-    renderTable();
-  });
-
-  // Status filter
-  document.getElementById('statusFilter').addEventListener('change', function() {
-    document.getElementById('searchTable').dispatchEvent(new Event('input'));
-  });
-
-  // Sort functionality
-  window.sortTable = function(column) {
-    const sortKey = {
-      'Department': 'Department',
-      '': 'hrsSaved',
-      'accuracy': 'accuracy'
-    }[column];
-
-    const direction = sortDirection[column] === 'desc' ? 'asc' : 'desc';
-    sortDirection[column] = direction;
-
-    filteredRows.sort((a, b) => {
-      if (direction === 'desc') {
-        return b[sortKey] - a[sortKey];
-      } else {
-        return a[sortKey] - b[sortKey];
-      }
-    });
-
     renderTable();
   };
 
-  // User filter handler
-  document.getElementById('userFilter').addEventListener('change', function() {
+  /* ---------- search + status ---------- */
+  function applyFilters(){
+    const search = document.getElementById('searchTable').value.toLowerCase();
+    const status = document.getElementById('statusFilter').value;
+    filteredRows = allRows.filter(r=>{
+      const mSearch = r.process.toLowerCase().includes(search) || r.owner.toLowerCase().includes(search);
+      const mStatus = status==='all' || r.status===status;
+      return mSearch && mStatus;
+    });
+    renderTable();
+  }
+  document.getElementById('searchTable').addEventListener('input', applyFilters);
+  document.getElementById('statusFilter').addEventListener('change', applyFilters);
+
+  /* ---------- user filter ---------- */
+  document.getElementById('userFilter').addEventListener('change', function(){
     currentUser = this.value;
-    filteredRows = currentUser === 'all'
-      ? [...allRows]
-      : allRows.filter(r => r.owner.toLowerCase() === currentUser);
-
-    // Reset filters
-    document.getElementById('searchTable').value = '';
-    document.getElementById('statusFilter').value = 'all';
-
+    applyFilters();          // re-apply search & status on new owner
     renderKPI();
     renderCharts();
     renderTable();
   });
 
-  // Initial render
+  /* ---------- initial draw ---------- */
   renderKPI();
   renderCharts();
   renderTable();
 
-  // Add smooth scroll animation for sections
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+  /* ---------- scroll fade ---------- */
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.style.opacity='1';
+        e.target.style.transform='translateY(0)';
       }
     });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'all 0.6s ease-out';
-    observer.observe(section);
+  }, {threshold:.1});
+  document.querySelectorAll('section').forEach(s=>{
+    s.style.opacity='0';
+    s.style.transform='translateY(20px)';
+    s.style.transition='all .6s ease-out';
+    obs.observe(s);
   });
 });
 </script>
