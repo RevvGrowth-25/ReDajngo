@@ -9,67 +9,67 @@ def ceo_dashboard(request):
 
     data = {
         "kpi": {
-            "all": {
-                "automations": 50,
-                "handover": 47,
-                "hrsSaved": 1840,
-                "production": 25
-            },
-            "Ayush": {
-                "automations": 45,
-                "handover": 45,
-                "hrsSaved": 920,
-                "production": 20
-            },
-            "Divya": {
-                "automations": 30,
-                "handover": 27,
-                "hrsSaved": 80,
-                "production": 3
-            },
-        },
+    "all": {
+        "automations": 35,
+        "handover": 32,
+        "hrsSaved": 310,
+        "production": 25
+    },
+    "Ayush": {
+        "automations": 28,
+        "handover": 28,
+        "hrsSaved": 250,
+        "production": 20
+    },
+    "Divya": {
+        "automations": 7,
+        "handover": 4,
+        "hrsSaved": 60,
+        "production": 5
+    },
+},
         "bar": {
-            "all": {
-                "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media", "AI"],
-                "data": [5, 7, 3, 8, 3, 4, 4]
-            },
-            "Ayush": {
-                "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media", "AI"],
-                "data": [5, 6, 3,18,3,4,4]
-            },
-            "Divya": {
-                "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media", "AI"],
-                "data": [2, 7, 0, 12, 2, 4, 3]
-            },
-        },
+    "all": {
+        "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media", "AI"],
+        "data": [6, 6, 3, 10, 3, 4, 3]
+    },
+    "Ayush": {
+        "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media", "AI"],
+        "data": [5, 5, 3, 8, 2, 3, 2]
+    },
+    "Divya": {
+        "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media", "AI"],
+        "data": [1, 1, 0, 2, 1, 1, 1]
+    },
+},
         "pie": {
-            "all": {
-                "labels": ["Ayush", "Divya"],
-                "data": [45,30]
-            },
-            "Ayush": {
-                "labels": ["Ayush"],
-                "data": [45]
-            },
-            "Divya": {
-                "labels": ["Divya"],
-                "data": [30]
-            },
-        },
+    "all": {
+        "labels": ["Ayush", "Divya"],
+        "data": [28, 7]
+    },
+    "Ayush": {
+        "labels": ["Ayush"],
+        "data": [28]
+    },
+    "Divya": {
+        "labels": ["Divya"],
+        "data": [7]
+    },
+},
         "line": {
     "all": {
         "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        "data":  [0, 2, 3, 4, 7, 8, 9, 4, 6, 13]   # total = 45
+        "data": [0, 2, 4, 5, 6, 6, 7, 8, 9, 8]  # total = 35
     },
     "Ayush": {
         "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        "data":  [0, 2, 3, 4, 5, 6, 5, 3, 7, 8]   # total = 43
+        "data": [0, 1, 4, 5, 6, 5, 4, 4, 6, 8]  # total = 28
     },
-            "Divya": {
-                "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                "data": [0, 0, 0, 0, 0, 0, 8, 9, 3, 10]
-            },
-        },
+    "Divya": {
+        "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        "data": [0, 0, 0, 0, 0, 0, 1, 2, 2, 4]  # total = 7
+    },
+},
         "rows": [
     {
         "process": "Blog Summarizer",
@@ -77,7 +77,7 @@ def ceo_dashboard(request):
         "Department": "Content",
         "hrsSaved": 6,
         "accuracy": 96,
-        "status": "Live"
+        "status": "Testing"
     },
     {
         "process": "Reddit AI Agent",
@@ -261,7 +261,7 @@ def ceo_dashboard(request):
         "Department": "SEO",
         "hrsSaved": 4,
         "accuracy": 94,
-        "status": "Testing"
+        "status": "Live"
     },
     {
         "process": "Click Bait Automation",
@@ -311,6 +311,46 @@ def ceo_dashboard(request):
         "accuracy": 94,
         "status": "Live"
     },
+    {
+        "process": "Composio and MINDPAL MCP",
+        "owner": "Ayush",
+        "Department": "SEO",
+        "hrsSaved": 2,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "Capture first & Referring Page",
+        "owner": "Ayush",
+        "Department": "SEO",
+        "hrsSaved": 4,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "LinkedIn Post Finder",
+        "owner": "Ayush",
+        "Department": "SEO",
+        "hrsSaved": 2,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "MINDPAL Custom Tool",
+        "owner": "Ayush",
+        "Department": "SEO",
+        "hrsSaved": 6,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "Webflow Automation",
+        "owner": "Ayush",
+        "Department": "SEO",
+        "hrsSaved": 6,
+        "accuracy": 94,
+        "status": "Live"
+    }
 ],
         "metadata": {
             "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
