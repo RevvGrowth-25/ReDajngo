@@ -59,11 +59,11 @@ def ceo_dashboard(request):
         "line": {
     "all": {
         "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        "data": [0, 2, 3, 5, 2, 2, 2, 4, 7, 13]  # total = 35
+        "data": [1, 2, 3, 4, 4, 5, 5, 6, 7, 10]  # total = 35
     },
     "Ayush": {
         "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        "data": [0, 2, 3, 5, 2, 2, 2, 4,7,13]  # total = 28
+        "data": [1, 2, 3, 4, 4, 5, 5, 6, 7, 10]  # total = 28
     },
     "Divya": {
         "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
