@@ -95,8 +95,8 @@
         </div>
         <div class="flex items-center gap-4">
           <div class="text-center px-4 py-2 bg-green-50 rounded-lg border border-green-200">
-            <div class="text-xs text-green-600 font-semibold">Growth Rate</div>
-            <div class="text-lg font-bold text-green-700" id="trendGrowth">+0%</div>
+            <div class="text-xs text-green-600 font-semibold">Leave Count</div>
+            <div class="text-lg font-bold text-green-700" id="trendGrowth"> </div>
           </div>
           <div class="text-center px-4 py-2 bg-blue-50 rounded-lg border border-blue-200">
             <div class="text-xs text-blue-600 font-semibold">Current Month</div>
@@ -241,9 +241,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalBar = d.bar.data.reduce((a,b)=>a+b,0);
     document.getElementById('totalBarHours').textContent = totalBar.toLocaleString('en-IN');
     const lineData = d.line.data;
+    const allLeaves = [0, 0, 1, 1, 0, 2, 1, 0, 1, 2];
+const ayushLeaves = [0, 0, 1, 1, 2, 1, 0, 1, 2, 0];
+const divyaLeaves = [0, 0, 0, 0, 0, 0, 1, 1, 1, 1];
+
+const ayushTotal = ayushLeaves.reduce((a, b) => a + b, 0);
+const divyaTotal = divyaLeaves.reduce((a, b) => a + b, 0);
+
+// if (leaveBreakupEl) leaveBreakupEl.textContent = `Ayush: ${ayushTotal} | Divya: ${divyaTotal}`;
+
     if(lineData.length>=2){
       const growth = ((lineData[lineData.length-1]-lineData[0])/lineData[0]*100).toFixed(1);
-      document.getElementById('trendGrowth').textContent = (growth>0?'+':'')+growth+'%';
+      document.getElementById('trendGrowth').textContent = `Ayush: ${ayushTotal} | Divya: ${divyaTotal}`;
       document.getElementById('currentMonth').textContent = lineData[lineData.length-1].toLocaleString('en-IN');
     }
 
