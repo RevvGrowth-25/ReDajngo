@@ -10,16 +10,16 @@ def ceo_dashboard(request):
     data = {
         "kpi": {
     "all": {
-        "automations": 35,
-        "handover": 32,
+        "automations": 44,
+        "handover": 41,
         "hrsSaved": 310,
-        "production": 32
+        "production": 41
     },
     "Ayush": {
-        "automations": 35,
-        "handover": 32,
+        "automations": 44,
+        "handover": 41,
         "hrsSaved": 250,
-        "production": 32
+        "production": 41
     },
     "Divya": {
         "automations": 17,
@@ -31,11 +31,11 @@ def ceo_dashboard(request):
         "bar": {
     "all": {
         "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media", "AI"],
-        "data": [6, 6, 3, 10, 3, 4, 3]
+        "data": [7, 7, 3, 16, 4, 4, 3]
     },
     "Ayush": {
         "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media", "AI"],
-        "data": [5, 5, 3, 8, 2, 3, 2]
+        "data": [6, 6, 3, 14, 3, 3, 2]
     },
     "Divya": {
         "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media", "AI"],
@@ -348,6 +348,78 @@ def ceo_dashboard(request):
         "owner": "Ayush",
         "Department": "SEO",
         "hrsSaved": 6,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "Linkedin Ads Automations ",
+        "owner": "Ayush",
+        "Department": "PPC",
+        "hrsSaved": 2,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "MQL/SQL Leads Qualifications ",
+        "owner": "Ayush",
+        "Department": "SEO",
+        "hrsSaved": 2,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "Karthick Email into Notions",
+        "owner": "Ayush",
+        "Department": "Karthick",
+        "hrsSaved": 6,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "Blog Outline Gen",
+        "owner": "Ayush",
+        "Department": "Content",
+        "hrsSaved": 2,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "Keyword Researcher[Gumloop]",
+        "owner": "Ayush",
+        "Department": "SEO",
+        "hrsSaved": 3,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "Scraping Resturant Data",
+        "owner": "Ayush",
+        "Department": "Data",
+        "hrsSaved": 6,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "SEO Forecasting Tool",
+        "owner": "Ayush",
+        "Department": "SEO",
+        "hrsSaved": 2,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "Mass Mailer Blog Scraper",
+        "owner": "Ayush",
+        "Department": "SEO",
+        "hrsSaved": 2,
+        "accuracy": 94,
+        "status": "Live"
+    },
+    {
+        "process": "Google Search Console with Claude ",
+        "owner": "Ayush",
+        "Department": "SEO",
+        "hrsSaved": 2,
         "accuracy": 94,
         "status": "Live"
     }
