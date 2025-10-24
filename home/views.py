@@ -13,19 +13,19 @@ def ceo_dashboard(request):
         "automations": 35,
         "handover": 32,
         "hrsSaved": 310,
-        "production": 25
+        "production": 32
     },
     "Ayush": {
-        "automations": 28,
-        "handover": 28,
+        "automations": 35,
+        "handover": 32,
         "hrsSaved": 250,
-        "production": 20
+        "production": 32
     },
     "Divya": {
-        "automations": 7,
-        "handover": 4,
+        "automations": 17,
+        "handover": 14,
         "hrsSaved": 60,
-        "production": 5
+        "production": 14
     },
 },
         "bar": {
@@ -45,29 +45,29 @@ def ceo_dashboard(request):
         "pie": {
     "all": {
         "labels": ["Ayush", "Divya"],
-        "data": [28, 7]
+        "data": [35, 17]
     },
     "Ayush": {
         "labels": ["Ayush"],
-        "data": [28]
+        "data": [35]
     },
     "Divya": {
         "labels": ["Divya"],
-        "data": [7]
+        "data": [17]
     },
 },
         "line": {
     "all": {
         "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        "data": [0, 2, 4, 5, 6, 6, 7, 8, 9, 8]  # total = 35
+        "data": [0, 2, 3, 5, 2, 2, 2, 4, 7, 13]  # total = 35
     },
     "Ayush": {
         "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        "data": [0, 1, 4, 5, 6, 5, 4, 4, 6, 8]  # total = 28
+        "data": [0, 2, 3, 5, 2, 2, 2, 4,7,13]  # total = 28
     },
     "Divya": {
         "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        "data": [0, 0, 0, 0, 0, 0, 1, 2, 2, 4]  # total = 7
+        "data": [0, 0, 0, 0, 0, 0, 3, 3, 3, 8]  # total = 7
     },
 },
         "rows": [
