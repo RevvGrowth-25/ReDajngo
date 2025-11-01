@@ -10,9 +10,12 @@
         <h2 class="text-2xl font-bold text-gray-800 mb-2">Performance Overview</h2>
         <p class="text-gray-600">Real-time metrics and automation insights</p>
       </div>
-      <div class="text-right hidden md:block">
-        <div class="text-sm text-gray-500">Last Updated</div>
-        <div class="text-sm font-semibold text-gray-700">{{ data.metadata.last_updated }}</div>
+      <div class="flex items-center gap-3">
+        <div class="text-right hidden md:block mr-4">
+          <div class="text-sm text-gray-500">Last Updated</div>
+          <div class="text-sm font-semibold text-gray-700">{{ data.metadata.last_updated }}</div>
+        </div>
+
       </div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="kpiRow"></div>
@@ -65,7 +68,7 @@
         <div class="flex-1">
           <h3 class="text-xl font-bold text-gray-800 mb-3">Executive Summary</h3>
           <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-            With 48 automations saving 350 hours every month, your AI ecosystem is fully production-ready: 41 processes are already live across SEO, PPC, Sales, HR, Content, Design and Data, while 7 are still in testing. Average accuracy stands at 94 %, delivering consistent, measurable impact across all departments
+            With 44 automations saving 310 hours monthly, your AI ecosystem is production-ready: 41 processes run live across SEO, PPC, Sales and HR, while only 3 remain in testing.
           </p>
         </div>
       </div>
@@ -409,9 +412,35 @@ document.addEventListener("DOMContentLoaded", () => {
       bar: dashboardData.bar[currentUser],
       pie: dashboardData.pie[currentUser],
       line: dashboardData.line[currentUser],
-      rows: currentUser === 'all' ? filteredRows : filteredRows.filter(r => r.owner.toLowerCase().includes(currentUser.toLowerCase()))
+      rows: currentUser === 'all' ? filteredRows : filteredRows.filter(r => {
+        const owner = r.owner.toLowerCase();
+        const user = currentUser.toLowerCase();
+        return owner.includes(user);
+      })
     };
   }
+
+  // User filter function
+  window.filterByUser = function(user) {
+    console.log('🔄 Switching to user:', user);
+    currentUser = user;
+
+    // Update button styles
+    ['All', 'Ayush', 'Divya'].forEach(u => {
+      const btn = document.getElementById('btn' + u);
+      if (u === user || (user === 'all' && u === 'All')) {
+        btn.className = 'px-4 py-2 rounded-md text-sm font-semibold transition-all bg-gradient-to-r from-brand-500 to-brand-600 text-white';
+      } else {
+        btn.className = 'px-4 py-2 rounded-md text-sm font-semibold transition-all text-gray-600 hover:bg-gray-100';
+      }
+    });
+
+    // Reset filters to base rows, then apply current search/status filters
+    filteredRows = [...allRows];
+    applyFilters();
+    renderKPI();
+    renderCharts();
+  };
 
   function renderKPI(){
     const d = getData();
