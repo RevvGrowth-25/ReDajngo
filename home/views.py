@@ -85,7 +85,7 @@ def ceo_dashboard(request):
                 "hrsSaved": 6,
                 "accuracy": 96,
                 "status": "Testing",
-                "workflowID": "0HYf1VptZGbfAWnh"  # Changed to match actual n8n workflow
+                "workflowID": "ORwODhPEbCMkXtCr"  # Changed to match actual n8n workflow
             },
             {
                 "process": "Reddit AI Agent",
@@ -94,7 +94,7 @@ def ceo_dashboard(request):
                 "hrsSaved": 2,
                 "accuracy": 94,
                 "status": "Testing",
-                "workflowID": "PRFxoRmqI2UrXSQ4"
+                "workflowID": "RoLEBOUSnK8oVYRj"
             },
             {
                 "process": "Click Up Task Automation",
@@ -102,7 +102,8 @@ def ceo_dashboard(request):
                 "Department": "Design",
                 "hrsSaved": 0.5,
                 "accuracy": 95,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"nkexdQHzN38g1yEd"
             },
             {
                 "process": "Hiring Automation",
@@ -110,7 +111,9 @@ def ceo_dashboard(request):
                 "Department": "HR",
                 "hrsSaved": 4,
                 "accuracy": 92,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Instant CV Reader",
@@ -118,7 +121,9 @@ def ceo_dashboard(request):
                 "Department": "HR",
                 "hrsSaved": 6,
                 "accuracy": 92,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "TO-Do Automation",
@@ -126,7 +131,9 @@ def ceo_dashboard(request):
                 "Department": "HR",
                 "hrsSaved": 4,
                 "accuracy": 91,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Clickup Automation",
@@ -134,7 +141,8 @@ def ceo_dashboard(request):
                 "Department": "Karthick",
                 "hrsSaved": 4,
                 "accuracy": 97,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"nBet5npnfp5XevBg"
             },
             {
                 "process": "Landing Page Automation",
@@ -142,7 +150,8 @@ def ceo_dashboard(request):
                 "Department": "Karthick",
                 "hrsSaved": 8,
                 "accuracy": 98,
-                "status": "Testing"
+                "status": "Testing",
+                "workflowID":"ceZCJHxpo044mssA"
             },
             {
                 "process": "Proposal Automation",
@@ -150,7 +159,8 @@ def ceo_dashboard(request):
                 "Department": "Karthick",
                 "hrsSaved": 8,
                 "accuracy": 89,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"ta5g7bb05euWCxCk"
             },
             {
                 "process": "Prospect Email Automation",
@@ -158,7 +168,8 @@ def ceo_dashboard(request):
                 "Department": "Karthick",
                 "hrsSaved": 4,
                 "accuracy": 90,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"WIcJazEMuViqNhd4"
             },
             {
                 "process": "Proposal Follow Up Notif",
@@ -166,7 +177,8 @@ def ceo_dashboard(request):
                 "Department": "Sales",
                 "hrsSaved": 0.5,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":""
             },
             {
                 "process": "Weekly Report Automation",
@@ -174,7 +186,8 @@ def ceo_dashboard(request):
                 "Department": "Sales",
                 "hrsSaved": 0.5,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"KjWtBVddRaHcsAoL"
             },
             {
                 "process": "RFI Automation",
@@ -182,7 +195,8 @@ def ceo_dashboard(request):
                 "Department": "Sales",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"2pQCtFsYEB3BdzcV"
             },
             {
                 "process": "Series A Automation",
@@ -190,7 +204,8 @@ def ceo_dashboard(request):
                 "Department": "Data",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"rlQn6ENPiamoUIgj"
             },
             {
                 "process": "Trello X Google Sheets",
@@ -198,7 +213,9 @@ def ceo_dashboard(request):
                 "Department": "Data",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Website Leads",
@@ -206,7 +223,9 @@ def ceo_dashboard(request):
                 "Department": "Sales",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "AI Outreach Engine V1",
@@ -214,7 +233,9 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Competitor kwd Analysis",
@@ -222,7 +243,8 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 5,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"1mcP3gr3w3Ai3WZQ"
             },
             {
                 "process": "Google ads customgpt",
@@ -230,7 +252,9 @@ def ceo_dashboard(request):
                 "Department": "PPC",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Content Audit Automation",
@@ -238,7 +262,8 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 5,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"YSLtvDYiiL6iSANb"
             },
             {
                 "process": "Lead Qualifications",
@@ -246,7 +271,9 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Scrape Communities Automation",
@@ -254,7 +281,8 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":""
             },
             {
                 "process": "Revv AI Blog Gen",
@@ -262,7 +290,8 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"tyeI2wrHhElPvCeY"
             },
             {
                 "process": "Keyword Brief",
@@ -270,7 +299,9 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Click Bait Automation",
@@ -278,7 +309,8 @@ def ceo_dashboard(request):
                 "Department": "Social Media",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"IkG9PNmYXGEIO1sd"
             },
             {
                 "process": "Linkedin Outreach Automation",
@@ -286,7 +318,9 @@ def ceo_dashboard(request):
                 "Department": "Social Media",
                 "hrsSaved": 3,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "LinkedIn trending Posts",
@@ -294,7 +328,9 @@ def ceo_dashboard(request):
                 "Department": "Social Media",
                 "hrsSaved": 3,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "AI Tools Automation",
@@ -302,7 +338,8 @@ def ceo_dashboard(request):
                 "Department": "AI",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"IXhaW6XTANVDhocc"
             },
             {
                 "process": "Documentations Automation",
@@ -310,7 +347,8 @@ def ceo_dashboard(request):
                 "Department": "AI",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"EEHbxKQFbCt8cMNy"
             },
             {
                 "process": "RIVA bot",
@@ -318,7 +356,8 @@ def ceo_dashboard(request):
                 "Department": "AI",
                 "hrsSaved": 8,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "workflowID":"E8Hd9KcUzVHlhLKQ"
             },
             {
                 "process": "Composio and MINDPAL MCP",
@@ -326,7 +365,9 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Capture first & Referring Page",
@@ -334,7 +375,9 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "LinkedIn Post Finder",
@@ -342,7 +385,9 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "MINDPAL Custom Tool",
@@ -350,7 +395,9 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Webflow Automation",
@@ -358,7 +405,9 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Linkedin Ads Automations ",
@@ -366,7 +415,9 @@ def ceo_dashboard(request):
                 "Department": "PPC",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "MQL/SQL Leads Qualifications ",
@@ -374,7 +425,9 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Karthick Email into Notions",
@@ -382,7 +435,9 @@ def ceo_dashboard(request):
                 "Department": "Karthick",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable": "False",
+                "workflowID":""
             },
             {
                 "process": "Blog Outline Gen",
@@ -390,7 +445,9 @@ def ceo_dashboard(request):
                 "Department": "Content",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Keyword Researcher[Gumloop]",
@@ -398,7 +455,9 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 3,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Scraping Resturant Data",
@@ -406,7 +465,9 @@ def ceo_dashboard(request):
                 "Department": "Data",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "SEO Forecasting Tool",
@@ -414,7 +475,9 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Mass Mailer Blog Scraper",
@@ -422,15 +485,19 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
-                "process": "Googttle Search Console with Claude ",
+                "process": "Google Search Console with Claude ",
                 "owner": "Ayush",
                 "Department": "SEO",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live"
+                "status": "Live",
+                "disable":"False",
+                "workflowID":""
             },
             {
                 "process": "Reporting Dashboard ",
@@ -438,7 +505,8 @@ def ceo_dashboard(request):
                 "Department": "Karthick",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Testing"
+                "status": "Testing",
+                "workflowID":"dtZAb90qxdBsuTXu"
             },
             {
                 "process": "Click Up Bot",
@@ -446,7 +514,8 @@ def ceo_dashboard(request):
                 "Department": "Karthick",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Testing"
+                "status": "Testing",
+                "workflowID":"HHVUJosFwXL0AnQZ"
             },
             {
                 "process": "Linkedin AI Agent ",
@@ -454,7 +523,8 @@ def ceo_dashboard(request):
                 "Department": "Social Media",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Testing"
+                "status": "Testing",
+                "workflowID":"aU2d5IIQHMePdNWy"
             },
             {
                 "process": " Newsletter and linkedin post generater",
@@ -462,7 +532,8 @@ def ceo_dashboard(request):
                 "Department": "Social Media",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Testing"
+                "status": "Testing",
+                "workflowID":"0vjzitT78ZmTiMsb"
             }
         ],
         "metadata": {
