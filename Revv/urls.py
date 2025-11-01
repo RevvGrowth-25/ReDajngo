@@ -16,10 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home.views import ceo_dashboard
+from home.views import ceo_dashboard,get_workflow_report,test_webhook_raw
 
 urlpatterns = [
-    path('', ceo_dashboard),  # 👈 this should be '' instead of '/'
+    path('', ceo_dashboard),
+    path('api/workflow-report/', get_workflow_report),
+    # 👈 this should be '' instead of '/'
+path('api/test-webhook/', test_webhook_raw),
     path('admin/', admin.site.urls),
+
 ]
 
