@@ -188,7 +188,7 @@
               <th class="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">Process Name</th>
               <th class="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">Owner</th>
               <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('Department')">Department <i class="fas fa-sort text-xs ml-1"></i></th>
-              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('hrsSaved')">Project <i class="fas fa-sort text-xs ml-1"></i></th>
+              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('hrsSaved')">Hours <i class="fas fa-sort text-xs ml-1"></i></th>
               <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('accuracy')">Accuracy <i class="fas fa-sort text-xs ml-1"></i></th>
               <th class="px-4 py-3 text-center text-xs font-bold text-gray-700 uppercase tracking-wider">Status</th>
               <th class="px-4 py-3 text-center text-xs font-bold text-gray-700 uppercase tracking-wider">Action</th>
@@ -527,12 +527,17 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="w-2 h-2 ${r.status==='Live'?'bg-green-500':'bg-amber-500'} rounded-full animate-pulse"></span>${r.status}
           </span>
         </td>
-        <td class="px-4 py-4 text-center">
-          <button onclick="openReportModal('${r.workflowID}', '${r.process}')" class="px-3 py-1.5 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white text-xs font-semibold rounded-lg transition-all shadow-sm hover:shadow-md flex items-center gap-2 mx-auto">
-            <i class="fas fa-chart-bar"></i>
-            Open Report
-          </button>
-        </td>
+       <td class="px-4 py-4 text-center">
+  <button
+    onclick="openReportModal('${r.workflowID}', '${r.process}')"
+    class="px-3 py-1.5 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white text-xs font-semibold rounded-lg transition-all shadow-sm hover:shadow-md flex items-center gap-2 mx-auto
+    ${r.disable === 'False' ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}"
+    ${r.disable === 'False' ? 'disabled' : ''}
+  >
+    <i class="fas fa-chart-bar"></i>
+    Open Report
+  </button>
+</td>
       </tr>`
     ).join('');
   }
