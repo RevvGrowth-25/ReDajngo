@@ -64,8 +64,8 @@
         </div>
         <div class="flex-1">
           <h3 class="text-xl font-bold text-gray-800 mb-3">Executive Summary</h3>
-          <p class="text-gray-700 leading-relaxed text-sm md:text-base" id="aiOverviewText">
-            With 44 automations saving 310 hours monthly, your AI ecosystem is production-ready: 41 processes run live across SEO, PPC, Sales and HR, while only 3 remain in testing. Department-wise, SEO & PPC contribute the largest share (16), followed by Sales, Content and Design. Owner split shows Ayush driving 35 automations and Divya 17, reflecting balanced collaboration. Monthly trends reveal October as the high-water mark with 10 new deployments, signalling accelerated adoption. To maximise ROI, fast-track the remaining testing items—promoting them could release an extra 60 hours per month and push overall accuracy beyond the current 94% average.
+          <p class="text-gray-700 leading-relaxed text-sm md:text-base">
+            With 44 automations saving 310 hours monthly, your AI ecosystem is production-ready: 41 processes run live across SEO, PPC, Sales and HR, while only 3 remain in testing.
           </p>
         </div>
       </div>
@@ -77,7 +77,6 @@
 <section class="py-6">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <!-- Bar Chart -->
       <div class="lg:col-span-2 bg-white rounded-2xl p-6 card shadow-md">
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-3">
           <div>
@@ -91,8 +90,6 @@
         </div>
         <div class="h-[280px]"><canvas id="barChart"></canvas></div>
       </div>
-
-      <!-- Pie Chart -->
       <div class="bg-white rounded-2xl p-6 card shadow-md">
         <div class="mb-4">
           <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-chart-pie text-accent-600"></i>Team Contribution</h3>
@@ -102,9 +99,7 @@
       </div>
     </div>
 
-    <!-- Second Row - Status Distribution & Leave Chart -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
-      <!-- Status Distribution -->
       <div class="lg:col-span-1">
         <div class="bg-white rounded-2xl p-6 card shadow-md">
           <div class="mb-4">
@@ -114,24 +109,12 @@
           <div class="h-[280px] flex items-center justify-center"><canvas id="statusPieChart"></canvas></div>
         </div>
       </div>
-
-      <!-- Monthly Leave Chart -->
       <div class="lg:col-span-2">
         <div class="bg-white rounded-2xl p-6 card shadow-md">
           <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-3">
             <div>
               <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-calendar-times text-blue-600"></i>Monthly Leave Tracker</h3>
               <p class="text-sm text-gray-500 mt-1">Leave distribution by team member</p>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="flex items-center gap-2">
-                <div class="w-3 h-3 bg-blue-500 rounded"></div>
-                <span class="text-xs font-semibold text-gray-600">Ayush</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <div class="w-3 h-3 bg-pink-500 rounded"></div>
-                <span class="text-xs font-semibold text-gray-600">Divya</span>
-              </div>
             </div>
           </div>
           <div class="h-[280px]"><canvas id="leaveBarChart"></canvas></div>
@@ -187,11 +170,9 @@
         </div>
       </div>
 
-      <!-- Search & Status Filter -->
       <div class="mb-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <div class="flex-1">
-          <input type="text" id="searchTable" placeholder="Search processes..."
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
+          <input type="text" id="searchTable" placeholder="Search processes..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
         </div>
         <select id="statusFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
           <option value="all">All Status</option>
@@ -206,34 +187,200 @@
             <tr class="border-b-2 border-gray-200">
               <th class="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">Process Name</th>
               <th class="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">Owner</th>
-              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('Department')">
-                Department <i class="fas fa-sort text-xs ml-1"></i>
-              </th>
-              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('hrsSaved')">
-                Project <i class="fas fa-sort text-xs ml-1"></i>
-              </th>
-              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('accuracy')">
-                Accuracy <i class="fas fa-sort text-xs ml-1"></i>
-              </th>
+              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('Department')">Department <i class="fas fa-sort text-xs ml-1"></i></th>
+              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('hrsSaved')">Project <i class="fas fa-sort text-xs ml-1"></i></th>
+              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('accuracy')">Accuracy <i class="fas fa-sort text-xs ml-1"></i></th>
               <th class="px-4 py-3 text-center text-xs font-bold text-gray-700 uppercase tracking-wider">Status</th>
+              <th class="px-4 py-3 text-center text-xs font-bold text-gray-700 uppercase tracking-wider">Action</th>
             </tr>
           </thead>
           <tbody id="detailTableBody" class="divide-y divide-gray-100"></tbody>
         </table>
       </div>
 
-      <div class="mt-4 text-sm text-gray-500 text-center" id="tableInfo">
-        Showing <span id="rowCount" class="font-semibold">0</span> processes
-      </div>
+      <div class="mt-4 text-sm text-gray-500 text-center">Showing <span id="rowCount" class="font-semibold">0</span> processes</div>
     </div>
   </div>
 </section>
+
+<!-- Report Modal -->
+<div id="reportModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4" onclick="if(event.target===this) closeReportModal()">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden" onclick="event.stopPropagation()">
+    <div class="bg-gradient-to-r from-brand-600 to-accent-600 px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur">
+          <i class="fas fa-chart-line text-white text-lg"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white" id="modalProcessName">Process Report</h3>
+          <p class="text-sm text-white/80" id="modalWorkflowID">Workflow ID: Loading...</p>
+        </div>
+      </div>
+      <button onclick="closeReportModal()" class="w-8 h-8 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors">
+        <i class="fas fa-times text-white"></i>
+      </button>
+    </div>
+
+    <div class="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
+      <div id="modalLoading" class="flex flex-col items-center justify-center py-12">
+        <div class="w-16 h-16 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin"></div>
+        <p class="mt-4 text-gray-600 font-medium">Loading report data...</p>
+      </div>
+
+      <div id="modalContent" class="hidden">
+        <!-- No Data Message -->
+        <div id="noDataMessage" class="hidden mb-6 bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+          <div class="flex items-start gap-3">
+            <i class="fas fa-info-circle text-yellow-600 text-2xl mt-1"></i>
+            <div>
+              <h4 class="font-bold text-yellow-800 mb-2">No Execution Data Found</h4>
+              <p class="text-sm text-yellow-700">This workflow hasn't been executed yet, or the workflow ID may be incorrect. Please check:</p>
+              <ul class="text-sm text-yellow-700 mt-2 ml-4 list-disc">
+                <li>Verify the workflow ID in n8n</li>
+                <li>Ensure the workflow has been executed at least once</li>
+                <li>Check if the workflow is active in n8n</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-200">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center"><i class="fas fa-play text-white"></i></div>
+              <div>
+                <div class="text-xs text-gray-600 font-semibold">Total Runs</div>
+                <div class="text-2xl font-bold text-gray-800" id="statTotalRuns">0</div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border border-green-200">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center"><i class="fas fa-check-circle text-white"></i></div>
+              <div>
+                <div class="text-xs text-gray-600 font-semibold">Success Rate</div>
+                <div class="text-2xl font-bold text-gray-800" id="statSuccessRate">0%</div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-200">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center"><i class="fas fa-clock text-white"></i></div>
+              <div>
+                <div class="text-xs text-gray-600 font-semibold">Avg Duration</div>
+                <div class="text-2xl font-bold text-gray-800" id="statAvgDuration">0s</div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 border border-orange-200">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center"><i class="fas fa-calendar text-white"></i></div>
+              <div>
+                <div class="text-xs text-gray-600 font-semibold">Last Run</div>
+                <div class="text-sm font-bold text-gray-800" id="statLastRun">N/A</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
+            <h4 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2"><i class="fas fa-chart-pie text-brand-600"></i>Execution Status</h4>
+            <div class="h-[250px]"><canvas id="modalPieChart"></canvas></div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
+            <h4 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2"><i class="fas fa-chart-line text-accent-600"></i>Daily Execution Timeline</h4>
+            <p class="text-xs text-gray-500 mb-3">Success vs Failed executions over time</p>
+            <div class="h-[250px]"><canvas id="modalLineChart"></canvas></div>
+          </div>
+        </div>
+
+        <!-- Execution Timeline Section -->
+        <div class="mb-6">
+          <div class="text-center mb-6">
+            <h3 class="text-2xl font-bold text-gray-800">Execution Duration Timeline</h3>
+            <p class="text-sm text-gray-500 mt-2">Detailed execution duration over time for each run</p>
+          </div>
+
+          <!-- All Executions Timeline -->
+          <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm mb-6">
+            <h4 class="text-lg font-semibold mb-4 text-blue-600 flex items-center gap-2">
+              <i class="fas fa-chart-line"></i>
+              All Executions Duration
+            </h4>
+            <div class="h-96"><canvas id="allTimelineChart"></canvas></div>
+          </div>
+
+          <!-- Successful Runs Timeline -->
+          <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm mb-6">
+            <h4 class="text-lg font-semibold mb-4 text-green-600 flex items-center gap-2">
+              <i class="fas fa-check-circle"></i>
+              Successful Runs Duration
+            </h4>
+            <div class="h-96"><canvas id="successTimelineChart"></canvas></div>
+          </div>
+
+          <!-- Failed Runs Timeline -->
+          <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
+            <h4 class="text-lg font-semibold mb-4 text-red-600 flex items-center gap-2">
+              <i class="fas fa-times-circle"></i>
+              Failed Runs Duration
+            </h4>
+            <div class="h-96"><canvas id="failTimelineChart"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="modalError" class="hidden flex flex-col items-center justify-center py-12">
+        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4"><i class="fas fa-exclamation-circle text-red-600 text-3xl"></i></div>
+        <p class="text-gray-800 font-semibold mb-2">Failed to load report</p>
+        <p class="text-gray-600 text-sm" id="errorMessage">Please try again later</p>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
+<!-- Suppress Tailwind CDN warning in development -->
 <script>
+  const originalWarn = console.warn;
+  console.warn = function(...args) {
+    if (args[0] && args[0].includes('cdn.tailwindcss.com')) return;
+    originalWarn.apply(console, args);
+  };
+</script>
+<script>
+let modalPieChart, modalLineChart, allTimelineChart, successTimelineChart, failTimelineChart;
+
 document.addEventListener("DOMContentLoaded", () => {
+  console.log('🚀 Dashboard initializing...');
+
   const dashboardData = {{ data|safe }};
+
+  console.log('📊 Dashboard data type:', typeof dashboardData);
+  console.log('📊 Dashboard data:', dashboardData);
+
+  if (!dashboardData) {
+    console.error('❌ Dashboard data is null or undefined!');
+    alert('Error loading dashboard data. Please refresh the page.');
+    return;
+  }
+
+  if (!dashboardData.rows) {
+    console.error('❌ Dashboard data has no rows property!', Object.keys(dashboardData));
+    alert('Error: Dashboard data structure is invalid.');
+    return;
+  }
+
+  if (!Array.isArray(dashboardData.rows)) {
+    console.error('❌ Dashboard rows is not an array!', typeof dashboardData.rows);
+    alert('Error: Dashboard rows data is invalid.');
+    return;
+  }
+
+  console.log('✅ Dashboard data validated. Rows count:', dashboardData.rows.length);
+
   let currentUser = 'all';
   let allRows = [...dashboardData.rows];
   let filteredRows = [...allRows];
@@ -250,26 +397,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const lineCtx = document.getElementById('lineChart').getContext('2d');
   const statusPieCtx = document.getElementById('statusPieChart').getContext('2d');
   const leaveBarCtx = document.getElementById('leaveBarChart').getContext('2d');
-  
+
   let barChart, pieChart, lineChart, statusPieChart, leaveBarChart;
 
   Chart.defaults.font.family = "'Inter', sans-serif";
   Chart.defaults.color = '#6b7280';
 
-  /* ---------- helpers ---------- */
   function getData(){
     return {
       kpi: dashboardData.kpi[currentUser],
       bar: dashboardData.bar[currentUser],
       pie: dashboardData.pie[currentUser],
       line: dashboardData.line[currentUser],
-      rows: currentUser === 'all'
-        ? filteredRows
-        : filteredRows.filter(r => r.owner.toLowerCase().includes(currentUser.toLowerCase()))
+      rows: currentUser === 'all' ? filteredRows : filteredRows.filter(r => r.owner.toLowerCase().includes(currentUser.toLowerCase()))
     };
   }
 
-  /* ---------- KPI cards ---------- */
   function renderKPI(){
     const d = getData();
     const items = [
@@ -293,17 +436,14 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>`).join('');
   }
 
-  /* ---------- charts ---------- */
   function renderCharts(){
     const d = getData();
     const totalBar = d.bar.data.reduce((a,b)=>a+b,0);
     document.getElementById('totalBarHours').textContent = totalBar.toLocaleString('en-IN');
     const lineData = d.line.data;
-    
-    // Leave data for charts
+
     const ayushLeavesData = [0, 0, 1, 1, 2, 1, 0, 1, 2, 0];
     const divyaLeavesData = [0, 0, 0, 0, 0, 0, 1, 1, 1, 1];
-
     const ayushTotal = ayushLeavesData.reduce((a, b) => a + b, 0);
     const divyaTotal = divyaLeavesData.reduce((a, b) => a + b, 0);
 
@@ -320,215 +460,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     barChart = new Chart(barCtx, {
       type:'bar',
-      data:{
-        labels:d.bar.labels,
-        datasets:[{
-          label:'Projects',
-          data:d.bar.data,
-          backgroundColor:colors.brand.slice(0,d.bar.labels.length),
-          borderRadius:8,
-          borderSkipped:false
-        }]
-      },
-      options:{
-        responsive:true,
-        maintainAspectRatio:false,
-        plugins:{
-          legend:{display:false},
-          tooltip:{
-            callbacks:{label:ctx=>'Projects: '+ctx.parsed.y.toLocaleString('en-IN')}
-          }
-        },
-        scales:{
-          y:{beginAtZero:true, grid:{color:'rgba(0,0,0,0.05)', drawBorder:false}},
-          x:{grid:{display:false, drawBorder:false}}
-        }
-      }
+      data:{ labels:d.bar.labels, datasets:[{ label:'Projects', data:d.bar.data, backgroundColor:colors.brand.slice(0,d.bar.labels.length), borderRadius:8, borderSkipped:false }] },
+      options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false}, tooltip:{ callbacks:{label:ctx=>'Projects: '+ctx.parsed.y.toLocaleString('en-IN')} } }, scales:{ y:{beginAtZero:true, grid:{color:'rgba(0,0,0,0.05)', drawBorder:false}}, x:{grid:{display:false, drawBorder:false}} } }
     });
 
     pieChart = new Chart(pieCtx, {
       type:'doughnut',
-      data:{
-        labels:d.pie.labels,
-        datasets:[{
-          data:d.pie.data,
-          backgroundColor:d.pie.labels.length===1?[colors.gradient.brand]:[colors.gradient.brand, colors.gradient.accent],
-          borderWidth:3,
-          borderColor:'#fff',
-          hoverOffset:10
-        }]
-      },
-      options:{
-        responsive:true,
-        maintainAspectRatio:false,
-        cutout:'65%',
-        plugins:{
-          legend:{
-            position:'bottom',
-            labels:{
-              padding:15,
-              font:{size:12, weight:'600'},
-              usePointStyle:true,
-              pointStyle:'circle'
-            }
-          },
-          tooltip:{
-            callbacks:{
-              label:ctx=>{
-                const total = ctx.dataset.data.reduce((a,b)=>a+b,0);
-                const pct = ((ctx.parsed/total)*100).toFixed(1);
-                return ctx.label+': '+ctx.parsed.toLocaleString('en-IN')+' ('+pct+'%)';
-              }
-            }
-          }
-        }
-      }
+      data:{ labels:d.pie.labels, datasets:[{ data:d.pie.data, backgroundColor:d.pie.labels.length===1?[colors.gradient.brand]:[colors.gradient.brand, colors.gradient.accent], borderWidth:3, borderColor:'#fff', hoverOffset:10 }] },
+      options:{ responsive:true, maintainAspectRatio:false, cutout:'65%', plugins:{ legend:{ position:'bottom', labels:{ padding:15, font:{size:12, weight:'600'}, usePointStyle:true, pointStyle:'circle' } }, tooltip:{ callbacks:{ label:ctx=>{ const total = ctx.dataset.data.reduce((a,b)=>a+b,0); const pct = ((ctx.parsed/total)*100).toFixed(1); return ctx.label+': '+ctx.parsed.toLocaleString('en-IN')+' ('+pct+'%)'; } } } } }
     });
 
     lineChart = new Chart(lineCtx, {
       type:'line',
-      data:{
-        labels:d.line.labels,
-        datasets:[{
-          label:'Project',
-          data:d.line.data,
-          borderColor:colors.gradient.brand,
-          backgroundColor:colors.gradient.brandLight,
-          borderWidth:3,
-          tension:0.4,
-          fill:true,
-          pointRadius:6,
-          pointHoverRadius:8,
-          pointBackgroundColor:'#fff',
-          pointBorderColor:colors.gradient.brand,
-          pointBorderWidth:3
-        }]
-      },
-      options:{
-        responsive:true,
-        maintainAspectRatio:false,
-        plugins:{
-          legend:{display:false},
-          tooltip:{
-            callbacks:{label:ctx=>'Project: '+ctx.parsed.y.toLocaleString('en-IN')}
-          }
-        },
-        scales:{
-          y:{beginAtZero:true, grid:{color:'rgba(0,0,0,0.05)', drawBorder:false}},
-          x:{grid:{display:false, drawBorder:false}}
-        }
-      }
+      data:{ labels:d.line.labels, datasets:[{ label:'Project', data:d.line.data, borderColor:colors.gradient.brand, backgroundColor:colors.gradient.brandLight, borderWidth:3, tension:0.4, fill:true, pointRadius:6, pointHoverRadius:8, pointBackgroundColor:'#fff', pointBorderColor:colors.gradient.brand, pointBorderWidth:3 }] },
+      options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false}, tooltip:{ callbacks:{label:ctx=>'Project: '+ctx.parsed.y.toLocaleString('en-IN')} } }, scales:{ y:{beginAtZero:true, grid:{color:'rgba(0,0,0,0.05)', drawBorder:false}}, x:{grid:{display:false, drawBorder:false}} } }
     });
 
-    // Status Distribution Pie Chart
     const liveCount = d.rows.filter(r=>r.status==='Live').length;
     const testingCount = d.rows.filter(r=>r.status==='Testing').length;
 
     statusPieChart = new Chart(statusPieCtx, {
       type:'doughnut',
-      data:{
-        labels:['Live', 'Testing'],
-        datasets:[{
-          data:[liveCount, testingCount],
-          backgroundColor:['rgba(34,197,94,0.8)', 'rgba(251,191,36,0.8)'],
-          borderWidth:3,
-          borderColor:'#fff',
-          hoverOffset:10
-        }]
-      },
-      options:{
-        responsive:true,
-        maintainAspectRatio:false,
-        cutout:'65%',
-        plugins:{
-          legend:{
-            position:'bottom',
-            labels:{
-              padding:15,
-              font:{size:12, weight:'600'},
-              usePointStyle:true,
-              pointStyle:'circle'
-            }
-          },
-          tooltip:{
-            callbacks:{
-              label:ctx=>{
-                const total = ctx.dataset.data.reduce((a,b)=>a+b,0);
-                const pct = ((ctx.parsed/total)*100).toFixed(1);
-                return ctx.label+': '+ctx.parsed+' ('+pct+'%)';
-              }
-            }
-          }
-        }
-      }
+      data:{ labels:['Live', 'Testing'], datasets:[{ data:[liveCount, testingCount], backgroundColor:['rgba(34,197,94,0.8)', 'rgba(251,191,36,0.8)'], borderWidth:3, borderColor:'#fff', hoverOffset:10 }] },
+      options:{ responsive:true, maintainAspectRatio:false, cutout:'65%', plugins:{ legend:{ position:'bottom', labels:{ padding:15, font:{size:12, weight:'600'}, usePointStyle:true, pointStyle:'circle' } }, tooltip:{ callbacks:{ label:ctx=>{ const total = ctx.dataset.data.reduce((a,b)=>a+b,0); const pct = ((ctx.parsed/total)*100).toFixed(1); return ctx.label+': '+ctx.parsed+' ('+pct+'%)'; } } } } }
     });
 
-    // Monthly Leave Bar Chart
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'];
-
     leaveBarChart = new Chart(leaveBarCtx, {
       type:'bar',
-      data:{
-        labels: months,
-        datasets:[
-          {
-            label:'Ayush',
-            data: ayushLeavesData,
-            backgroundColor:'rgba(59, 130, 246, 0.8)',
-            borderColor:'rgba(59, 130, 246, 1)',
-            borderWidth:2,
-            borderRadius:6,
-            borderSkipped:false
-          },
-          {
-            label:'Divya',
-            data: divyaLeavesData,
-            backgroundColor:'rgba(236, 72, 153, 0.8)',
-            borderColor:'rgba(236, 72, 153, 1)',
-            borderWidth:2,
-            borderRadius:6,
-            borderSkipped:false
-          }
-        ]
-      },
-      options:{
-        responsive:true,
-        maintainAspectRatio:false,
-        plugins:{
-          legend:{
-            display:true,
-            position:'top',
-            labels:{
-              padding:15,
-              font:{size:12, weight:'600'},
-              usePointStyle:true,
-              pointStyle:'circle'
-            }
-          },
-          tooltip:{
-            callbacks:{
-              label:ctx=> ctx.dataset.label + ': ' + ctx.parsed.y + ' leave(s)'
-            }
-          }
-        },
-        scales:{
-          y:{
-            beginAtZero:true,
-            ticks:{
-              stepSize:1,
-              callback: function(value) {
-                return Number.isInteger(value) ? value : '';
-              }
-            },
-            grid:{color:'rgba(0,0,0,0.05)', drawBorder:false}
-          },
-          x:{grid:{display:false, drawBorder:false}}
-        }
-      }
+      data:{ labels: months, datasets:[ { label:'Ayush', data: ayushLeavesData, backgroundColor:'rgba(59, 130, 246, 0.8)', borderColor:'rgba(59, 130, 246, 1)', borderWidth:2, borderRadius:6, borderSkipped:false }, { label:'Divya', data: divyaLeavesData, backgroundColor:'rgba(236, 72, 153, 0.8)', borderColor:'rgba(236, 72, 153, 1)', borderWidth:2, borderRadius:6, borderSkipped:false } ] },
+      options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:true, position:'top', labels:{ padding:15, font:{size:12, weight:'600'}, usePointStyle:true, pointStyle:'circle' } }, tooltip:{ callbacks:{ label:ctx=> ctx.dataset.label + ': ' + ctx.parsed.y + ' leave(s)' } } }, scales:{ y:{ beginAtZero:true, ticks:{ stepSize:1, callback: function(value) { return Number.isInteger(value) ? value : ''; } }, grid:{color:'rgba(0,0,0,0.05)', drawBorder:false} }, x:{grid:{display:false, drawBorder:false}} } }
     });
   }
 
-  /* ---------- table ---------- */
   function renderTable(){
     const d = getData();
     const live = d.rows.filter(r=>r.status==='Live').length;
@@ -563,11 +527,16 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="w-2 h-2 ${r.status==='Live'?'bg-green-500':'bg-amber-500'} rounded-full animate-pulse"></span>${r.status}
           </span>
         </td>
+        <td class="px-4 py-4 text-center">
+          <button onclick="openReportModal('${r.workflowID}', '${r.process}')" class="px-3 py-1.5 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white text-xs font-semibold rounded-lg transition-all shadow-sm hover:shadow-md flex items-center gap-2 mx-auto">
+            <i class="fas fa-chart-bar"></i>
+            Open Report
+          </button>
+        </td>
       </tr>`
     ).join('');
   }
 
-  /* ---------- sort ---------- */
   window.sortTable = function(col){
     const key = {Department:'Department', hrsSaved:'hrsSaved', accuracy:'accuracy'}[col];
     sortDirection[col] = sortDirection[col]==='desc'?'asc':'desc';
@@ -580,7 +549,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderTable();
   };
 
-  /* ---------- search + status ---------- */
   function applyFilters(){
     const search = document.getElementById('searchTable').value.toLowerCase();
     const status = document.getElementById('statusFilter').value;
@@ -595,24 +563,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('searchTable').addEventListener('input', applyFilters);
   document.getElementById('statusFilter').addEventListener('change', applyFilters);
 
-  /* ---------- user filter ---------- */
-  const userFilterEl = document.getElementById('userFilter');
-  if(userFilterEl) {
-    userFilterEl.addEventListener('change', function(){
-      currentUser = this.value;
-      applyFilters();
-      renderKPI();
-      renderCharts();
-      renderTable();
-    });
-  }
-
-  /* ---------- initial draw ---------- */
   renderKPI();
   renderCharts();
   renderTable();
 
-  /* ---------- scroll fade ---------- */
   const obs = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
@@ -628,5 +582,358 @@ document.addEventListener("DOMContentLoaded", () => {
     obs.observe(s);
   });
 });
+
+// MODAL FUNCTIONS
+window.openReportModal = async function (workflowID, processName) {
+  console.log('🚀 Opening modal for:', workflowID);
+  const modal = document.getElementById('reportModal');
+  const loading = document.getElementById('modalLoading');
+  const content = document.getElementById('modalContent');
+  const error = document.getElementById('modalError');
+
+  document.getElementById('modalProcessName').textContent = processName;
+  document.getElementById('modalWorkflowID').textContent = 'Workflow ID: ' + workflowID;
+
+  modal.classList.remove('hidden');
+  loading.classList.remove('hidden');
+  content.classList.add('hidden');
+  error.classList.add('hidden');
+
+  try {
+    console.log('📡 Fetching from backend...');
+    const response = await fetch('/api/workflow-report/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': getCookie('csrftoken')
+      },
+      body: JSON.stringify({ workflowID })
+    });
+
+    if (!response.ok) {
+      const errData = await response.json();
+      throw new Error(errData.error || 'Server error');
+    }
+
+    const data = await response.json();
+    console.log('✅ Data received:', data);
+
+    if (data.totalRuns === undefined) {
+      throw new Error('Invalid data format');
+    }
+
+    if (data.totalRuns === 0) {
+      console.log('⚠️ No executions found for this workflow');
+      document.getElementById('noDataMessage').classList.remove('hidden');
+    } else {
+      document.getElementById('noDataMessage').classList.add('hidden');
+    }
+
+    loading.classList.add('hidden');
+    content.classList.remove('hidden');
+
+    document.getElementById('statTotalRuns').textContent = data.totalRuns;
+    document.getElementById('statSuccessRate').textContent = data.successRate + '%';
+    document.getElementById('statAvgDuration').textContent = data.avgDuration + 's';
+    document.getElementById('statLastRun').textContent = data.lastRun;
+
+    console.log('✅ Stats updated');
+
+    const modalPieCtx = document.getElementById('modalPieChart').getContext('2d');
+    const modalLineCtx = document.getElementById('modalLineChart').getContext('2d');
+
+    if (modalPieChart) modalPieChart.destroy();
+    if (modalLineChart) modalLineChart.destroy();
+    if (allTimelineChart) allTimelineChart.destroy();
+    if (successTimelineChart) successTimelineChart.destroy();
+    if (failTimelineChart) failTimelineChart.destroy();
+
+    console.log('🎨 Creating charts...');
+
+    modalPieChart = new Chart(modalPieCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Success', 'Failed', 'Running'],
+        datasets: [{
+          data: [data.statusCount.success, data.statusCount.failed, data.statusCount.running],
+          backgroundColor: ['rgba(34,197,94,0.8)', 'rgba(239,68,68,0.8)', 'rgba(59,130,246,0.8)'],
+          borderWidth: 3,
+          borderColor: '#fff',
+          hoverOffset: 10
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '65%',
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { padding: 15, font: { size: 12, weight: '600' }, usePointStyle: true, pointStyle: 'circle' }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(ctx) {
+                const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                const pct = total > 0 ? ((ctx.parsed / total) * 100).toFixed(1) : 0;
+                return ctx.label + ': ' + ctx.parsed + ' (' + pct + '%)';
+              }
+            }
+          }
+        }
+      }
+    });
+
+    console.log('✅ Pie chart created');
+
+    modalLineChart = new Chart(modalLineCtx, {
+      type: 'line',
+      data: {
+        labels: data.dailyTrend.labels,
+        datasets: [
+          {
+            label: 'Total Runs',
+            data: data.dailyTrend.total,
+            borderColor: 'rgba(59, 130, 246, 0.8)',
+            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            borderWidth: 3,
+            tension: 0.4,
+            fill: true,
+            pointRadius: 5,
+            pointHoverRadius: 8,
+            pointBackgroundColor: '#fff',
+            pointBorderColor: 'rgba(59, 130, 246, 0.8)',
+            pointBorderWidth: 2
+          },
+          {
+            label: 'Successful',
+            data: data.dailyTrend.success,
+            borderColor: 'rgba(34, 197, 94, 0.8)',
+            backgroundColor: 'rgba(34, 197, 94, 0.1)',
+            borderWidth: 3,
+            tension: 0.4,
+            fill: true,
+            pointRadius: 5,
+            pointHoverRadius: 8,
+            pointBackgroundColor: '#fff',
+            pointBorderColor: 'rgba(34, 197, 94, 0.8)',
+            pointBorderWidth: 2
+          },
+          {
+            label: 'Failed',
+            data: data.dailyTrend.failed,
+            borderColor: 'rgba(239, 68, 68, 0.8)',
+            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+            borderWidth: 3,
+            tension: 0.4,
+            fill: true,
+            pointRadius: 5,
+            pointHoverRadius: 8,
+            pointBackgroundColor: '#fff',
+            pointBorderColor: 'rgba(239, 68, 68, 0.8)',
+            pointBorderWidth: 2
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+            labels: {
+              padding: 10,
+              font: { size: 11, weight: '600' },
+              usePointStyle: true,
+              pointStyle: 'circle'
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(ctx) {
+                return ctx.dataset.label + ': ' + ctx.parsed.y + ' runs';
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(0,0,0,0.05)', drawBorder: false },
+            ticks: {
+              stepSize: 1,
+              callback: function(value) {
+                return Number.isInteger(value) ? value : '';
+              }
+            }
+          },
+          x: {
+            grid: { display: false, drawBorder: false }
+          }
+        }
+      }
+    });
+
+    console.log('✅ Line chart created');
+
+    if (data.timeline && data.timeline.all && data.timeline.all.length > 0) {
+      console.log('🎨 Creating timeline charts...');
+
+      createTimelineChart('allTimelineChart', data.timeline.all, 'All Runs', '#3b82f6');
+
+      if (data.timeline.success && data.timeline.success.length > 0) {
+        createTimelineChart('successTimelineChart', data.timeline.success, 'Successful', '#10b981');
+      }
+
+      if (data.timeline.failed && data.timeline.failed.length > 0) {
+        createTimelineChart('failTimelineChart', data.timeline.failed, 'Failed', '#ef4444');
+      }
+
+      console.log('✅ Timeline charts created');
+    } else {
+      console.log('⚠️ No timeline data available');
+    }
+
+    console.log('🎉 Modal complete!');
+
+  } catch (err) {
+    console.error('❌ Error:', err);
+    loading.classList.add('hidden');
+    error.classList.remove('hidden');
+    document.getElementById('errorMessage').textContent = err.message || 'Unable to load report';
+  }
+};
+
+function createTimelineChart(canvasId, dataset, label, color) {
+  console.log(`📊 Creating ${label} timeline with ${dataset.length} points`);
+
+  const labels = dataset.map(d => d.time);
+  const durations = dataset.map(d => d.duration);
+
+  const ctx = document.getElementById(canvasId).getContext('2d');
+
+  let chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: `${label} Duration (seconds)`,
+        data: durations,
+        borderColor: color,
+        backgroundColor: color + '20',
+        borderWidth: 3,
+        pointRadius: 5,
+        pointBackgroundColor: color,
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2,
+        pointHoverRadius: 7,
+        pointHoverBorderWidth: 3,
+        tension: 0.4,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          labels: {
+            font: { size: 14, weight: '600' },
+            usePointStyle: true,
+            pointStyle: 'circle',
+            padding: 15
+          }
+        },
+        tooltip: {
+          backgroundColor: 'rgba(0,0,0,0.8)',
+          titleFont: { size: 14 },
+          bodyFont: { size: 13 },
+          padding: 12,
+          cornerRadius: 8,
+          callbacks: {
+            label: function(ctx) {
+              return `Duration: ${ctx.parsed.y}s`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Duration (seconds)',
+            font: { size: 14, weight: '600' }
+          },
+          grid: {
+            color: 'rgba(0,0,0,0.05)',
+            drawBorder: false
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Execution Time',
+            font: { size: 14, weight: '600' }
+          },
+          grid: {
+            display: false,
+            drawBorder: false
+          },
+          ticks: {
+            maxRotation: 45,
+            minRotation: 45,
+            font: { size: 11 }
+          }
+        }
+      }
+    }
+  });
+
+  if (canvasId === 'allTimelineChart') {
+    allTimelineChart = chart;
+  } else if (canvasId === 'successTimelineChart') {
+    successTimelineChart = chart;
+  } else if (canvasId === 'failTimelineChart') {
+    failTimelineChart = chart;
+  }
+}
+
+window.closeReportModal = function () {
+  console.log('🔒 Closing modal');
+  const modal = document.getElementById('reportModal');
+  modal.classList.add('hidden');
+  if (modalPieChart) { modalPieChart.destroy(); modalPieChart = null; }
+  if (modalLineChart) { modalLineChart.destroy(); modalLineChart = null; }
+  if (allTimelineChart) { allTimelineChart.destroy(); allTimelineChart = null; }
+  if (successTimelineChart) { successTimelineChart.destroy(); successTimelineChart = null; }
+  if (failTimelineChart) { failTimelineChart.destroy(); failTimelineChart = null; }
+};
+
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.substring(0, name.length + 1) === (name + '=')) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+}
 </script>
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.table-row { animation: fadeIn 0.3s ease-in both; }
+</style>
 {% endblock %}
