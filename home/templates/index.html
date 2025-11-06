@@ -514,7 +514,7 @@ document.addEventListener("DOMContentLoaded", () => {
       options:{ responsive:true, maintainAspectRatio:false, cutout:'65%', plugins:{ legend:{ position:'bottom', labels:{ padding:15, font:{size:12, weight:'600'}, usePointStyle:true, pointStyle:'circle' } }, tooltip:{ callbacks:{ label:ctx=>{ const total = ctx.dataset.data.reduce((a,b)=>a+b,0); const pct = ((ctx.parsed/total)*100).toFixed(1); return ctx.label+': '+ctx.parsed+' ('+pct+'%)'; } } } } }
     });
 
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov'];
     leaveBarChart = new Chart(leaveBarCtx, {
       type:'bar',
       data:{ labels: months, datasets:[ { label:'Ayush', data: ayushLeavesData, backgroundColor:'rgba(59, 130, 246, 0.8)', borderColor:'rgba(59, 130, 246, 1)', borderWidth:2, borderRadius:6, borderSkipped:false }, { label:'Divya', data: divyaLeavesData, backgroundColor:'rgba(236, 72, 153, 0.8)', borderColor:'rgba(236, 72, 153, 1)', borderWidth:2, borderRadius:6, borderSkipped:false } ] },
