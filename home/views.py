@@ -14,8 +14,8 @@ def ceo_dashboard(request):
     data = {
         "kpi": {
             "all": {
-                "automations": 48,
-                "handover": 41,
+                "automations": 50,
+                "handover": 44,
                 "hrsSaved": 350,
                 "production": 41
             },
