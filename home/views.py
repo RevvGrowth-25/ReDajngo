@@ -36,17 +36,17 @@ def ceo_dashboard(request):
             "all": {
                 "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media",
                            "AI"],
-                "data": [9, 7, 3, 16, 4, 6, 3]
+                "data": [9, 7, 3, 18, 4, 6, 3]
             },
             "Ayush": {
                 "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media",
                            "AI"],
-                "data": [8, 6, 3, 14, 3, 5, 2]
+                "data": [8, 6, 3, 15, 3, 5, 2]
             },
             "Divya": {
                 "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media",
                            "AI"],
-                "data": [3, 1, 0, 2, 1, 3, 1]
+                "data": [3, 1, 0, 4, 1, 3, 1]
             },
         },
         "pie": {
@@ -66,15 +66,15 @@ def ceo_dashboard(request):
         "line": {
             "all": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                "data": [1, 2, 3, 4, 4, 5, 5, 6, 7, 14]
+                "data": [1, 2, 3, 4, 4, 5, 5, 6, 7, 14,2]
             },
             "Ayush": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                "data": [1, 2, 3, 4, 4, 5, 5, 6, 7, 14]
+                "data": [1, 2, 3, 4, 4, 5, 5, 6, 7, 14,1]
             },
             "Divya": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                "data": [0, 0, 0, 0, 0, 0, 3, 3, 3, 12]
+                "data": [0, 0, 0, 0, 0, 0, 3, 3, 3, 12,2]
             },
         },
         "rows": [
@@ -514,7 +514,7 @@ def ceo_dashboard(request):
                 "Department": "Karthick",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Testing",
+                "status": "Live",
                 "workflowID":"HHVUJosFwXL0AnQZ"
             },
             {
@@ -523,7 +523,7 @@ def ceo_dashboard(request):
                 "Department": "Social Media",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Testing",
+                "status": "Live",
                 "workflowID":"aU2d5IIQHMePdNWy"
             },
             {
@@ -532,9 +532,29 @@ def ceo_dashboard(request):
                 "Department": "Social Media",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Testing",
+                "status": "Live",
                 "workflowID":"0vjzitT78ZmTiMsb"
-            }
+            },
+            {
+                "process": "PPC BOT",
+                "owner": "Ayush and Divya",
+                "Department": "PPC",
+                "hrsSaved": 2,
+                "accuracy": 94,
+                "status": "Testing",
+                "disable":"False",
+                "workflowID":""
+            },
+            {
+                "process": "Keyword Brief CustomGPT",
+                "owner": "Divya",
+                "Department": "SEO",
+                "hrsSaved": 2,
+                "accuracy": 95,
+                "status": "Testing",
+                "disable":"False",
+                "workflowID":""
+            },
         ],
         "metadata": {
             "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
