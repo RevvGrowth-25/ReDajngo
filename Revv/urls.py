@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home.views import ceo_dashboard,get_workflow_report,test_webhook_raw,feedback
+from home.views import ceo_dashboard,get_workflow_report,test_webhook_raw,feedback,december
 
 urlpatterns = [
     path('', ceo_dashboard),
