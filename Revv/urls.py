@@ -21,7 +21,7 @@ from home.views import ceo_dashboard,get_workflow_report,test_webhook_raw
 urlpatterns = [
     path('', ceo_dashboard),
     path('api/workflow-report/', get_workflow_report),
-    # 👈 this should be '' instead of '/'
+   path('feedback/', feedback),
 path('api/test-webhook/', test_webhook_raw),
     path('admin/', admin.site.urls),
 
