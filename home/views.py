@@ -5,9 +5,9 @@ from datetime import datetime
 import requests
 import json
 from dateutil import parser
+
 def feedback(request):
     return render(request,'feedback.html')
-
 def ceo_dashboard(request):
     """
     Enhanced CEO Dashboard with more realistic automation data
@@ -15,10 +15,10 @@ def ceo_dashboard(request):
     data = {
         "kpi": {
             "all": {
-                "automations": 50,
-                "handover": 44,
-                "hrsSaved": 350,
-                "production": 41
+                "automations": 52,
+                "handover": 46,
+                "hrsSaved": 356,
+                "production": 46
             },
             "Ayush": {
                 "automations": 48,
@@ -37,45 +37,45 @@ def ceo_dashboard(request):
             "all": {
                 "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media",
                            "AI"],
-                "data": [9, 7, 3, 18, 4, 6, 3]
+                "data": [10, 7, 3, 18, 4, 6, 3]
             },
             "Ayush": {
                 "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media",
                            "AI"],
-                "data": [8, 6, 3, 15, 3, 5, 2]
+                "data": [9, 6, 3, 15, 3, 5, 2]
             },
             "Divya": {
                 "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media",
                            "AI"],
-                "data": [3, 1, 0, 4, 1, 3, 1]
+                "data": [4, 1, 0, 4, 1, 3, 1]
             },
         },
         "pie": {
             "all": {
                 "labels": ["Ayush", "Divya"],
-                "data": [48, 21]
+                "data": [50, 23]
             },
             "Ayush": {
                 "labels": ["Ayush"],
-                "data": [48]
+                "data": [50]
             },
             "Divya": {
                 "labels": ["Divya"],
-                "data": [21]
+                "data": [23]
             },
         },
         "line": {
             "all": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                "data": [1, 2, 3, 4, 4, 5, 5, 6, 7, 14,2]
+                "data": [1, 2, 3, 4, 4, 5, 5, 6, 7, 14,3]
             },
             "Ayush": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                "data": [1, 2, 3, 4, 4, 5, 5, 6, 7, 14,1]
+                "data": [1, 2, 3, 4, 4, 5, 5, 6, 7, 14,2]
             },
             "Divya": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                "data": [0, 0, 0, 0, 0, 0, 3, 3, 3, 12,2]
+                "data": [0, 0, 0, 0, 0, 0, 3, 3, 3, 12,1]
             },
         },
         "rows": [
@@ -515,7 +515,7 @@ def ceo_dashboard(request):
                 "Department": "Karthick",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "Testing",
                 "workflowID":"HHVUJosFwXL0AnQZ"
             },
             {
@@ -524,38 +524,46 @@ def ceo_dashboard(request):
                 "Department": "Social Media",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "Testing",
                 "workflowID":"aU2d5IIQHMePdNWy"
             },
+            {
+                "process": " RevvGPT (Karthick & PPC)",
+                "owner": "Ayush and Divya",
+                "Department": "Karthick and PPC",
+                "hrsSaved": 4,
+                "accuracy": 94,
+                "status": "Testing",
+                "workflowID": "3AG0Qbk2tpriXUAS"
+            },
+            {
+                "process": "Lead Follow Up ",
+                "owner": "Ayush",
+                "Department": "PPC",
+                "hrsSaved": 4,
+                "accuracy": 94,
+                "status": "Live",
+                "disable":"False",
+            },
+            {
+                "process": "PPC Bot [Claude]",
+                "owner": "Divya",
+                "Department": "PPC",
+                "hrsSaved": 4,
+                "accuracy": 94,
+                "status": "Live",
+                "disable": "False",
+            },
+
             {
                 "process": " Newsletter and linkedin post generater",
                 "owner": "Ayush and Divya",
                 "Department": "Social Media",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "Testing",
                 "workflowID":"0vjzitT78ZmTiMsb"
-            },
-            {
-                "process": "PPC BOT",
-                "owner": "Ayush and Divya",
-                "Department": "PPC",
-                "hrsSaved": 2,
-                "accuracy": 94,
-                "status": "Testing",
-                "disable":"False",
-                "workflowID":""
-            },
-            {
-                "process": "Keyword Brief CustomGPT",
-                "owner": "Divya",
-                "Department": "SEO",
-                "hrsSaved": 2,
-                "accuracy": 95,
-                "status": "Testing",
-                "disable":"False",
-                "workflowID":""
-            },
+            }
         ],
         "metadata": {
             "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
