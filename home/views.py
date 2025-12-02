@@ -5,7 +5,8 @@ from datetime import datetime
 import requests
 import json
 from dateutil import parser
-
+def feedback(request):
+    return render(request,'feedback.html')
 
 def ceo_dashboard(request):
     """
