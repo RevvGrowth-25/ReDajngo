@@ -67,11 +67,11 @@ def ceo_dashboard(request):
         "line": {
             "all": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                "data": [1, 2, 3, 4, 4, 5, 5, 6, 7, 14,3,0]
+                "data": [0, 2, 3, 4, 4, 5, 5, 6, 7, 14,3,0]
             },
             "Ayush": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                "data": [1, 2, 3, 4, 4, 5, 5, 6, 7, 14,2,0]
+                "data": [0, 2, 3, 4, 4, 5, 5, 6, 7, 14,2,0]
             },
             "Divya": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
