@@ -8,6 +8,8 @@ from dateutil import parser
 
 def feedback(request):
     return render(request,'feedback.html')
+def december(request):
+    return render(request,'plan.html')
 def ceo_dashboard(request):
     """
     Enhanced CEO Dashboard with more realistic automation data
