@@ -24,6 +24,7 @@ urlpatterns = [
    path('feedback/', feedback),
 path('api/test-webhook/', test_webhook_raw),
     path('admin/', admin.site.urls),
+    path('plan-dec/', december),
 
 ]
 
