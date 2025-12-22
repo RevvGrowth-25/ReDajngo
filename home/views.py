@@ -17,19 +17,19 @@ def ceo_dashboard(request):
     data = {
         "kpi": {
             "all": {
-                "automations": 52,
-                "handover": 46,
+                "automations": 53,
+                "handover": 51,
                 "hrsSaved": 356,
                 "production": 46
             },
             "Ayush": {
-                "automations": 48,
+                "automations": 51,
                 "handover": 41,
                 "hrsSaved": 250,
                 "production": 41
             },
             "Divya": {
-                "automations": 21,
+                "automations": 25,
                 "handover": 14,
                 "hrsSaved": 60,
                 "production": 14
@@ -39,45 +39,45 @@ def ceo_dashboard(request):
             "all": {
                 "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media",
                            "AI"],
-                "data": [10, 7, 3, 18, 4, 6, 3]
+                "data": [10, 7, 4, 18, 5, 6, 3]
             },
             "Ayush": {
                 "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media",
                            "AI"],
-                "data": [9, 6, 3, 15, 3, 5, 2]
+                "data": [9, 6, 4, 15, 4, 5, 2]
             },
             "Divya": {
                 "labels": ["Karthick", "Sales and Data", "HR", "SEO and PPC", "Content Team", "Design and Social Media",
                            "AI"],
-                "data": [4, 1, 0, 4, 1, 3, 1]
+                "data": [4, 1, 1, 4, 2, 3, 1]
             },
         },
         "pie": {
             "all": {
                 "labels": ["Ayush", "Divya"],
-                "data": [50, 23]
+                "data": [51, 25]
             },
             "Ayush": {
                 "labels": ["Ayush"],
-                "data": [50]
+                "data": [51]
             },
             "Divya": {
                 "labels": ["Divya"],
-                "data": [23]
+                "data": [25]
             },
         },
         "line": {
             "all": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                "data": [0, 2, 3, 4, 4, 5, 5, 6, 7, 14,3,0]
+                "data": [0, 2, 3, 4, 4, 5, 5, 6, 7, 14,3,3]
             },
             "Ayush": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                "data": [0, 2, 3, 4, 4, 5, 5, 6, 7, 14,2,0]
+                "data": [0, 2, 3, 4, 4, 5, 5, 6, 7, 14,2,2]
             },
             "Divya": {
                 "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                "data": [0, 0, 0, 0, 0, 0, 3, 3, 3, 12,1,0]
+                "data": [0, 0, 0, 0, 0, 0, 3, 3, 3, 12,1,2]
             },
         },
         "rows": [
@@ -565,7 +565,27 @@ def ceo_dashboard(request):
                 "accuracy": 94,
                 "status": "Testing",
                 "workflowID":"0vjzitT78ZmTiMsb"
+            },
+            {
+                "process": " Interview Analyzer",
+                "owner": "Ayush and Divya",
+                "Department": "HR",
+                "hrsSaved": 2,
+                "accuracy": 80,
+                "status": "Testing",
+                "workflowID": "AuNHUWGeKv0C9rY1"
+            },
+            {
+                "process": "Everstage blog gen",
+                "owner": "Ayush and Divya",
+                "Department": "Content",
+                "hrsSaved": 6,
+                "accuracy": 90,
+                "status": "Testing",
+                "disable": "False",
             }
+
+
         ],
         "metadata": {
             "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
