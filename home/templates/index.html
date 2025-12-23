@@ -66,7 +66,7 @@
         <div class="flex-1">
           <h3 class="text-xl font-bold text-gray-800 mb-3">Executive Summary</h3>
           <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-            Executive Summary - The AI Department Executive Dashboard provides a centralized view of AI-driven operations across teams. With 53 automations saving 356 hours monthly, and 50 processes run live across SEO, PPC, Sales and HR, while only 3 remain in testing. The Dashboard also accommodates the team session, REVV AI blog count, monthly efficiency trend and custom AI agents all in one comprehensive UI friendly dashboard.
+            With 44 automations saving 310 hours monthly, your AI ecosystem is production-ready: 41 processes run live across SEO, PPC, Sales and HR, while only 3 remain in testing.
           </p>
         </div>
       </div>
@@ -768,6 +768,7 @@
           <option value="all">All Status</option>
           <option value="Live">Live Only</option>
           <option value="Testing">Testing Only</option>
+            <option value="UnActive">UnActive Only</option>
         </select>
       </div>
 
@@ -779,7 +780,7 @@
               <th class="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">Owner</th>
               <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('Department')">Department <i class="fas fa-sort text-xs ml-1"></i></th>
               <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('hrsSaved')">Hours <i class="fas fa-sort text-xs ml-1"></i></th>
-              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('accuracy')">Accuracy <i class="fas fa-sort text-xs ml-1"></i></th>
+              <th class="px-4 py-3 text-right text-xs font-bold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-brand-600" onclick="sortTable('accuracy')">Progress <i class="fas fa-sort text-xs ml-1"></i></th>
               <th class="px-4 py-3 text-center text-xs font-bold text-gray-700 uppercase tracking-wider">Status</th>
               <th class="px-4 py-3 text-center text-xs font-bold text-gray-700 uppercase tracking-wider">Action</th>
             </tr>
@@ -1136,7 +1137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lineData = d.line.data;
 
     const ayushLeavesData = [0, 0, 1, 1, 2, 1, 0, 1, 2, 0,1.5,0];
-    const divyaLeavesData = [0, 0, 0, 0, 0, 0, 1, 1, 1, 1,2,3.5,1];
+    const divyaLeavesData = [0, 0, 0, 0, 0, 0, 1, 1, 1, 2,3.5,1];
     const ayushTotal = ayushLeavesData.reduce((a, b) => a + b, 0);
     const divyaTotal = divyaLeavesData.reduce((a, b) => a + b, 0);
 
@@ -1216,10 +1217,37 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </td>
         <td class="px-4 py-4 text-center">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border ${r.status==='Live'?'bg-green-100 text-green-700 border-green-200':'bg-amber-100 text-amber-700 border-amber-200'}">
-            <span class="w-2 h-2 ${r.status==='Live'?'bg-green-500':'bg-amber-500'} rounded-full animate-pulse"></span>${r.status}
-          </span>
-        </td>
+  <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border
+    ${
+      r.status === 'Live'
+        ? 'bg-green-100 text-green-700 border-green-200'
+        : r.status === 'Testing'
+        ? 'bg-amber-100 text-amber-700 border-amber-200'
+        : r.status === 'Active'
+        ? 'bg-blue-100 text-blue-700 border-blue-200'
+        : r.status === 'UnActive'
+        ? 'bg-red-100 text-red-700 border-red-200'
+        : 'bg-gray-100 text-gray-600 border-gray-200'
+    }">
+
+    <span class="w-2 h-2 rounded-full
+      ${
+        r.status === 'Live'
+          ? 'bg-green-500 animate-pulse'
+          : r.status === 'Testing'
+          ? 'bg-amber-500 animate-pulse'
+          : r.status === 'Active'
+          ? 'bg-blue-500'
+          : r.status === 'UnActive'
+          ? 'bg-red-500'
+          : 'bg-gray-400'
+      }">
+    </span>
+
+    ${r.status}
+  </span>
+</td>
+
        <td class="px-4 py-4 text-center">
   <button
     onclick="openReportModal('${r.workflowID}', '${r.process}')"
@@ -1671,4 +1699,3 @@ if(ctxSession) {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 </style>
 {% endblock %}
-
