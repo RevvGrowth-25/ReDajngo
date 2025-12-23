@@ -87,7 +87,7 @@ def ceo_dashboard(request):
                 "Department": "Content",
                 "hrsSaved": 6,
                 "accuracy": 96,
-                "status": "Testing",
+                "status": "UnActive",
                 "workflowID": "ORwODhPEbCMkXtCr"  # Changed to match actual n8n workflow
             },
             {
@@ -96,7 +96,7 @@ def ceo_dashboard(request):
                 "Department": "Content",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Testing",
+                "status": "UnActive",
                 "workflowID": "RoLEBOUSnK8oVYRj"
             },
             {
@@ -114,7 +114,7 @@ def ceo_dashboard(request):
                 "Department": "HR",
                 "hrsSaved": 4,
                 "accuracy": 92,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -124,7 +124,7 @@ def ceo_dashboard(request):
                 "Department": "HR",
                 "hrsSaved": 6,
                 "accuracy": 92,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -134,12 +134,12 @@ def ceo_dashboard(request):
                 "Department": "HR",
                 "hrsSaved": 4,
                 "accuracy": 91,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
             {
-                "process": "Clickup Automation",
+                "process": "Clickup Task Tracker",
                 "owner": "Ayush",
                 "Department": "Karthick",
                 "hrsSaved": 4,
@@ -171,7 +171,7 @@ def ceo_dashboard(request):
                 "Department": "Karthick",
                 "hrsSaved": 4,
                 "accuracy": 90,
-                "status": "Live",
+                "status": "UnActive",
                 "workflowID":"WIcJazEMuViqNhd4"
             },
             {
@@ -180,7 +180,7 @@ def ceo_dashboard(request):
                 "Department": "Sales",
                 "hrsSaved": 0.5,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "workflowID":""
             },
             {
@@ -189,7 +189,7 @@ def ceo_dashboard(request):
                 "Department": "Sales",
                 "hrsSaved": 0.5,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "workflowID":"KjWtBVddRaHcsAoL"
             },
             {
@@ -207,7 +207,7 @@ def ceo_dashboard(request):
                 "Department": "Data",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "workflowID":"rlQn6ENPiamoUIgj"
             },
             {
@@ -216,7 +216,7 @@ def ceo_dashboard(request):
                 "Department": "Data",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -236,7 +236,7 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -246,7 +246,7 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 5,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "workflowID":"1mcP3gr3w3Ai3WZQ"
             },
             {
@@ -281,10 +281,10 @@ def ceo_dashboard(request):
             {
                 "process": "Scrape Communities Automation",
                 "owner": "Ayush",
-                "Department": "SEO",
+                "Department": "Social",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "workflowID":""
             },
             {
@@ -293,7 +293,7 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "workflowID":"tyeI2wrHhElPvCeY"
             },
             {
@@ -312,7 +312,7 @@ def ceo_dashboard(request):
                 "Department": "Social Media",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "workflowID":"IkG9PNmYXGEIO1sd"
             },
             {
@@ -368,7 +368,7 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -378,7 +378,7 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -398,7 +398,7 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -408,7 +408,7 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -418,7 +418,7 @@ def ceo_dashboard(request):
                 "Department": "PPC",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -428,7 +428,7 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -438,7 +438,7 @@ def ceo_dashboard(request):
                 "Department": "Karthick",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable": "False",
                 "workflowID":""
             },
@@ -448,7 +448,7 @@ def ceo_dashboard(request):
                 "Department": "Content",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -458,7 +458,7 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 3,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -468,7 +468,7 @@ def ceo_dashboard(request):
                 "Department": "Data",
                 "hrsSaved": 6,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -478,7 +478,7 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -488,7 +488,7 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -498,7 +498,7 @@ def ceo_dashboard(request):
                 "Department": "SEO",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Live",
+                "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
             },
@@ -508,16 +508,16 @@ def ceo_dashboard(request):
                 "Department": "Karthick",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Testing",
+                "status": "Live",
                 "workflowID":"dtZAb90qxdBsuTXu"
             },
             {
-                "process": "Click Up Bot",
+                "process": "Click Up Bot[Assign Task]",
                 "owner": "Ayush and Divya",
                 "Department": "Karthick",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Testing",
+                "status": "Live",
                 "workflowID":"HHVUJosFwXL0AnQZ"
             },
             {
@@ -526,7 +526,7 @@ def ceo_dashboard(request):
                 "Department": "Social Media",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Testing",
+                "status": "Live",
                 "workflowID":"aU2d5IIQHMePdNWy"
             },
             {
@@ -535,7 +535,7 @@ def ceo_dashboard(request):
                 "Department": "Karthick and PPC",
                 "hrsSaved": 4,
                 "accuracy": 94,
-                "status": "Testing",
+                "status": "Live",
                 "workflowID": "3AG0Qbk2tpriXUAS"
             },
             {
@@ -563,7 +563,7 @@ def ceo_dashboard(request):
                 "Department": "Social Media",
                 "hrsSaved": 2,
                 "accuracy": 94,
-                "status": "Testing",
+                "status": "Live",
                 "workflowID":"0vjzitT78ZmTiMsb"
             },
             {
