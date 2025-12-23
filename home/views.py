@@ -86,7 +86,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Content",
                 "hrsSaved": 6,
-                "accuracy": 96,
+                "accuracy": 100,
                 "status": "UnActive",
                 "workflowID": "ORwODhPEbCMkXtCr"  # Changed to match actual n8n workflow
             },
@@ -95,7 +95,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Content",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "workflowID": "RoLEBOUSnK8oVYRj"
             },
@@ -104,7 +104,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Design",
                 "hrsSaved": 0.5,
-                "accuracy": 95,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID":"nkexdQHzN38g1yEd"
             },
@@ -113,7 +113,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "HR",
                 "hrsSaved": 4,
-                "accuracy": 92,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -123,7 +123,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "HR",
                 "hrsSaved": 6,
-                "accuracy": 92,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -133,7 +133,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "HR",
                 "hrsSaved": 4,
-                "accuracy": 91,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -143,7 +143,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "Karthick",
                 "hrsSaved": 4,
-                "accuracy": 97,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID":"nBet5npnfp5XevBg"
             },
@@ -152,7 +152,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Karthick",
                 "hrsSaved": 8,
-                "accuracy": 98,
+                "accuracy": 95,
                 "status": "Testing",
                 "workflowID":"ceZCJHxpo044mssA"
             },
@@ -161,7 +161,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Karthick",
                 "hrsSaved": 8,
-                "accuracy": 89,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID":"ta5g7bb05euWCxCk"
             },
@@ -170,7 +170,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "Karthick",
                 "hrsSaved": 4,
-                "accuracy": 90,
+                "accuracy": 100,
                 "status": "UnActive",
                 "workflowID":"WIcJazEMuViqNhd4"
             },
@@ -179,7 +179,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Sales",
                 "hrsSaved": 0.5,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "workflowID":""
             },
@@ -188,7 +188,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Sales",
                 "hrsSaved": 0.5,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "workflowID":"KjWtBVddRaHcsAoL"
             },
@@ -197,7 +197,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Sales",
                 "hrsSaved": 4,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID":"2pQCtFsYEB3BdzcV"
             },
@@ -206,7 +206,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "Data",
                 "hrsSaved": 4,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "workflowID":"rlQn6ENPiamoUIgj"
             },
@@ -215,7 +215,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "Data",
                 "hrsSaved": 4,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -225,7 +225,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "Sales",
                 "hrsSaved": 4,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "disable":"False",
                 "workflowID":""
@@ -235,7 +235,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "SEO",
                 "hrsSaved": 4,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -245,7 +245,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "SEO",
                 "hrsSaved": 5,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "workflowID":"1mcP3gr3w3Ai3WZQ"
             },
@@ -254,7 +254,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "PPC",
                 "hrsSaved": 6,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "disable":"False",
                 "workflowID":""
@@ -264,7 +264,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "SEO",
                 "hrsSaved": 5,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID":"YSLtvDYiiL6iSANb"
             },
@@ -273,7 +273,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "SEO",
                 "hrsSaved": 6,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "disable":"False",
                 "workflowID":""
@@ -283,7 +283,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "Social",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "workflowID":""
             },
@@ -292,7 +292,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "SEO",
                 "hrsSaved": 6,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "workflowID":"tyeI2wrHhElPvCeY"
             },
@@ -301,7 +301,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "SEO",
                 "hrsSaved": 4,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "disable":"False",
                 "workflowID":""
@@ -311,7 +311,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Social Media",
                 "hrsSaved": 4,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "workflowID":"IkG9PNmYXGEIO1sd"
             },
@@ -320,7 +320,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "Social Media",
                 "hrsSaved": 3,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "disable":"False",
                 "workflowID":""
@@ -330,7 +330,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Social Media",
                 "hrsSaved": 3,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "disable":"False",
                 "workflowID":""
@@ -340,7 +340,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "AI",
                 "hrsSaved": 6,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID":"IXhaW6XTANVDhocc"
             },
@@ -349,7 +349,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "AI",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID":"EEHbxKQFbCt8cMNy"
             },
@@ -358,7 +358,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "AI",
                 "hrsSaved": 8,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID":"E8Hd9KcUzVHlhLKQ"
             },
@@ -367,7 +367,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "SEO",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -377,7 +377,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "SEO",
                 "hrsSaved": 4,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -387,7 +387,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "SEO",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "disable":"False",
                 "workflowID":""
@@ -407,7 +407,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "SEO",
                 "hrsSaved": 6,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -417,7 +417,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "PPC",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -427,7 +427,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "SEO",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -437,7 +437,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "Karthick",
                 "hrsSaved": 6,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable": "False",
                 "workflowID":""
@@ -447,7 +447,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "Content",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -457,7 +457,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "SEO",
                 "hrsSaved": 3,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -467,7 +467,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "Data",
                 "hrsSaved": 6,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -477,7 +477,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "SEO",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -487,7 +487,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "SEO",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -497,7 +497,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "SEO",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "UnActive",
                 "disable":"False",
                 "workflowID":""
@@ -507,7 +507,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Karthick",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID":"dtZAb90qxdBsuTXu"
             },
@@ -516,7 +516,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Karthick",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID":"HHVUJosFwXL0AnQZ"
             },
@@ -525,7 +525,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Social Media",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID":"aU2d5IIQHMePdNWy"
             },
@@ -534,7 +534,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Karthick and PPC",
                 "hrsSaved": 4,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID": "3AG0Qbk2tpriXUAS"
             },
@@ -543,7 +543,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush",
                 "Department": "PPC",
                 "hrsSaved": 4,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "disable":"False",
             },
@@ -552,7 +552,7 @@ def ceo_dashboard(request):
                 "owner": "Divya",
                 "Department": "PPC",
                 "hrsSaved": 4,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "disable": "False",
             },
@@ -562,7 +562,7 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Social Media",
                 "hrsSaved": 2,
-                "accuracy": 94,
+                "accuracy": 100,
                 "status": "Live",
                 "workflowID":"0vjzitT78ZmTiMsb"
             },
