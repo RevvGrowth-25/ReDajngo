@@ -567,12 +567,12 @@ def ceo_dashboard(request):
                 "workflowID":"0vjzitT78ZmTiMsb"
             },
             {
-                "process": " Interview Analyzer",
+                "process": "Revv Hire",
                 "owner": "Ayush and Divya",
                 "Department": "HR",
                 "hrsSaved": 2,
-                "accuracy": 80,
-                "status": "Testing",
+                "accuracy": 100,
+                "status": "Live",
                 "workflowID": "AuNHUWGeKv0C9rY1"
             },
             {
@@ -580,8 +580,8 @@ def ceo_dashboard(request):
                 "owner": "Ayush and Divya",
                 "Department": "Content",
                 "hrsSaved": 6,
-                "accuracy": 90,
-                "status": "Testing",
+                "accuracy": 100,
+                "status": "Live",
                 "disable": "False",
             }
 
