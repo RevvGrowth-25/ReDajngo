@@ -583,6 +583,15 @@ def ceo_dashboard(request):
                 "accuracy": 100,
                 "status": "Live",
                 "disable": "False",
+            },
+            {
+                "process": "Automated Birthday & Event Wishes",
+                "owner": "Ayush and Divya",
+                "Department": "HR",
+                "hrsSaved": 6,
+                "accuracy": 100,
+                "status": "Live",
+                "workflowID": "FqAkU6oXb0tdjFw6"
             }
 
 
